@@ -5,6 +5,7 @@ if has("mouse")
 	set mouse=a
 	set mousehide
 endif
+
 if has("gui_running") " gvim/win32 fails to do this automatically
 	set lines=50 columns=100
 	if has("gui_win32")
@@ -62,10 +63,31 @@ au BufNewFile,BufRead *.gradle setf groovy
 
 " Set up NERDTree keybinds and options
 map <F3> :NERDTreeFind<CR>
-map <F4> :NERDTreeToggle<CR>
+map <F4> :NERDTreeToggle<CR>u
 let NERDTreeChDirMode=2 " pwd follows NERDtree
 let NERDTreeHijackNetrw=0 " So vcscommand can commit directories
 let NERDTreeIgnore=['^CVS$', '^\.svn$', '\~$']
+let g:NERDTreeDirArrows=0
+
+"Load the NERDTree on startup and put the cursor in the main window
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+:set pastetoggle=<F11>
 
 " Set up taglist keybinds
 map <F5> :TlistToggle<CR>
