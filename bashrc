@@ -74,7 +74,16 @@ C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
 # Prompt: Set variables
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+MAX_WD_LENGTH="50"
+if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
+    PS1_HOSTNAME=
+else
+    PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
+fi
+PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
+
+
+
 # Environment variables for interactive shells
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
