@@ -57,3 +57,6 @@
 	path = vim/bundle/L9
 	url = https://github.com/vim-scripts/L9.git
 	ignore = untracked
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git

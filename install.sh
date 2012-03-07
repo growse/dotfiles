@@ -24,4 +24,4 @@ ln -s $DOTFILES/dircolors/dircolors.ansi-dark ~/.dir_colors
 
 git submodule update --init
 
-
+sudo apt-get install exuberant-ctags
