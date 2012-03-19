@@ -4,9 +4,9 @@
 DOTFILES=`pwd`
 
 # bash
-mv ~/.bashrc ~/.bashrc.local 2> /dev/null
+#mv ~/.bashrc ~/.bashrc.local 2> /dev/null
 ln -s $DOTFILES/bashrc ~/.bashrc
-touch ~/.bashrc.local
+#touch ~/.bashrc.local
 
 # vim
 mv ~/.vimrc ~/.vimrc.old 2> /dev/null
