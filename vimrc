@@ -38,6 +38,11 @@ set smartcase   " Search strings that are all-lowercase will do a case-insensiti
 set incsearch   " Incremental search
 set nowrap
 
+"Disable swap
+set nobackup
+set nowritebackup
+set noswapfile
+
 syntax enable
 filetype plugin indent on
 colorscheme solarized
