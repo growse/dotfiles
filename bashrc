@@ -144,7 +144,7 @@ if _command_exists dircolors; then
 fi
 
 # Run local config
-if [ -f ~/.bashrc.local ]; then
-	. ~/.bashrc.local
-fi
+#if [ -f ~/.bashrc.local ]; then
+#	. ~/.bashrc.local
+#fi
 
