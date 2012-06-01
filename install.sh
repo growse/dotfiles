@@ -4,7 +4,7 @@
 DOTFILES=`pwd`
 
 # bash
-#mv ~/.bashrc ~/.bashrc.local 2> /dev/null
+mv ~/.bashrc ~/.bashrc.local 2> /dev/null
 ln -s $DOTFILES/bashrc ~/.bashrc
 #touch ~/.bashrc.local
 
@@ -22,6 +22,6 @@ ln -s $DOTFILES/screenrc ~/.screenrc
 mv ~/.dir_colors ~/.dir_colors.old 2> /dev/null
 ln -s $DOTFILES/dircolors/dircolors.ansi-dark ~/.dir_colors
 
+sudo apt-get install exuberant-ctags vim
 git submodule update --init
 
-sudo apt-get install exuberant-ctags
