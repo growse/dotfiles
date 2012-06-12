@@ -64,3 +64,4 @@
 [submodule "vim/bundle/Pydiction"]
 	path = vim/bundle/Pydiction
 	url = https://github.com/vim-scripts/Pydiction.git
+	ignore = untracked
