@@ -169,4 +169,4 @@ endfunction
 " for typos
 map :W :w
 map :E :e
-let g:pydiction_location = '~/pydiction/complete-dict'
+let g:pydiction_location='~/.vim/bundle/Pydiction/complete-dict'
