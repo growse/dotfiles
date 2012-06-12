@@ -60,3 +60,7 @@
 [submodule "vim/bundle/vim-nerdtree-tabs"]
 	path = vim/bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
+	ignore = untracked
+[submodule "vim/bundle/Pydiction"]
+	path = vim/bundle/Pydiction
+	url = https://github.com/vim-scripts/Pydiction.git
