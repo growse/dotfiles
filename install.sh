@@ -4,7 +4,7 @@
 DOTFILES=`pwd`
 
 # bash
-#mv ~/.bashrc ~/.bashrc.local 2> /dev/null
+mv ~/.bashrc ~/.bashrc.local 2> /dev/null
 ln -s $DOTFILES/bashrc ~/.bashrc
 #touch ~/.bashrc.local
 
