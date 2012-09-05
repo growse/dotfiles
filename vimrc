@@ -33,6 +33,8 @@ nnoremap <CR> :noh<CR><CR>  " Clear search highlight by hitting enter
 set number      " Show line numbers
 set shiftwidth=4
 set tabstop=4
+set expandtab
+set softtabstop=4
 set hlsearch    " Highlight search results
 set smartcase   " Search strings that are all-lowercase will do a case-insensitive search
 set incsearch   " Incremental search
