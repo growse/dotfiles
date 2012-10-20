@@ -61,7 +61,7 @@
 	path = vim/bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
 	ignore = untracked
-[submodule "vim/bundle/Pydiction"]
-	path = vim/bundle/Pydiction
-	url = https://github.com/vim-scripts/Pydiction.git
-	ignore = untracked
+[submodule "vim/neocomplcache"]
+	path = vim/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.git
+    ignore = untracked
