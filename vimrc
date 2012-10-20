@@ -70,16 +70,20 @@ let g:filetype_asp = "aspvbs"
 au BufNewFile,BufRead *.gradle setf groovy
 
 " Set up NERDTree keybinds and options
-map <F3> :NERDTreeFind<CR>
-map <F4> :NERDTreeToggle<CR>u
-let NERDTreeChDirMode=2 " pwd follows NERDtree
-let NERDTreeHijackNetrw=0 " So vcscommand can commit directories
-let NERDTreeIgnore=['^CVS$', '^\.svn$', '\~$']
 let g:NERDTreeDirArrows=0
+map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+map <F3> :NERDTreeFind<CR>
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 "Load the NERDTree on startup and put the cursor in the main window
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
@@ -172,3 +176,12 @@ endfunction
 map :W :w
 map :E :e
 let g:pydiction_location='~/.vim/bundle/Pydiction/complete-dict'
+
+" Uncomment the following to have Vim jump to the last position when                                                       
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
+
