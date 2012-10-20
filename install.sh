@@ -22,6 +22,6 @@ ln -s $DOTFILES/screenrc ~/.screenrc
 mv ~/.dir_colors ~/.dir_colors.old 2> /dev/null
 ln -s $DOTFILES/dircolors/dircolors.ansi-dark ~/.dir_colors
 
-sudo apt-get install exuberant-ctags vim
+sudo apt-get install exuberant-ctags vim --default
 git submodule update --init
 
