@@ -35,6 +35,15 @@ _set_git_prompt_string() {
     fi 
 }
 
+_set_virtualenv_prompt_string() {
+	if [[ ! -z "$VIRTUAL_ENV" ]]; then
+		PS1_VIRTUALENV="(`basename \"$VIRTUAL_ENV\"`)"
+	else
+		PS1_VIRTUALENV=""
+	fi
+}
+
+
 # Paths and environment variables for non-interactive shells
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
@@ -80,7 +89,7 @@ if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
 else
     PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
 fi
-PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
+PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;_set_virtualenv_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_VIRTUALENV}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
 
 
 
