@@ -103,6 +103,7 @@ alias v='ls -ahlO'
 alias cls='clear'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias whatismyip='curl http://whatismyip.org/ && echo'
+alias json='python -mjson.tool'
 uname=`uname`
 if [[ $uname == 'Linux' ]]; then
 	alias ls='ls -lah --color'
@@ -153,7 +154,7 @@ if _command_exists dircolors; then
 fi
 
 # Run local config
-#if [ -f ~/.bashrc.local ]; then
-#	. ~/.bashrc.local
-#fi
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
+fi
 
