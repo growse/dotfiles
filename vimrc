@@ -2,26 +2,26 @@ call pathogen#infect()
 call pathogen#helptags()
 
 if has("mouse")
-	set mouse=a
-	set mousehide
+    set mouse=a
+    set mousehide
 endif
 
 if has("gui_running") " gvim/win32 fails to do this automatically
-	set lines=50 columns=100
-	if has("gui_win32")
-		source $VIMRUNTIME/mswin.vim
-		set guifont=Consolas:h10:cANSI
-		set background=dark
-	else
-		set guifont=Inconsolata:h14
-		set background=light
-	endif
+    set lines=50 columns=100
+    if has("gui_win32")
+        source $VIMRUNTIME/mswin.vim
+        set guifont=Consolas:h10:cANSI
+        set background=dark
+    else
+        set guifont=Inconsolata:h14
+        set background=light
+    endif
 else
-	set background=dark
+    set background=dark
 endif
 
 if has("win32")
-	cd $HOME " Default cwd is System32, which is stupid
+    cd $HOME " Default cwd is System32, which is stupid
 endif
 
 " Search options
@@ -257,3 +257,6 @@ endif
         if has('conceal')
             set conceallevel=2 concealcursor=i
         endif
+"Highlight problematic whitespace
+set list
+set listchars=tab:,.,trail:.,extends:#,nbsp:.

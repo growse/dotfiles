@@ -64,3 +64,6 @@
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
+[submodule "vim/bundle/python-mode"]
+	path = vim/bundle/python-mode
+	url = git://github.com/klen/python-mode.git
