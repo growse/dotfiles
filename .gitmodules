@@ -70,3 +70,6 @@
 	path = vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
 	ignore = untracked
+[submodule "vim/bundle/python-mode"]
+	path = vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
