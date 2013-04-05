@@ -49,6 +49,7 @@ set nowritebackup
 set noswapfile
 
 syntax enable
+filetype off
 filetype plugin indent on
 colorscheme solarized
 
@@ -260,3 +261,6 @@ endif
 "Highlight problematic whitespace
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
+
+"Allow tabluarizing of puppet files
+set AddTabularPattern block /=>
