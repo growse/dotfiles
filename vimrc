@@ -94,13 +94,13 @@ autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
+    if exists("t:NERDTreeBufName")
+        if bufwinnr(t:NERDTreeBufName) != -1
+            if winnr("$") == 1
+                q
+            endif
+        endif
     endif
-  endif
 endfunction
 
 :set pastetoggle=<F11>
@@ -111,69 +111,69 @@ let Tlist_Use_Right_Window=1
 
 command! -range=% Entities :<line1>,<line2>call Entities()
 function! Entities()
-  silent s/À/\&Agrave;/eg
-  silent s/Á/\&Aacute;/eg
-  silent s/Â/\&Acirc;/eg
-  silent s/Ã/\&Atilde;/eg
-  silent s/Ä/\&Auml;/eg
-  silent s/Å/\&Aring;/eg
-  silent s/Æ/\&AElig;/eg
-  silent s/Ç/\&Ccedil;/eg
-  silent s/È/\&Egrave;/eg
-  silent s/É/\&Eacute;/eg
-  silent s/Ê/\&Ecirc;/eg
-  silent s/Ë/\&Euml;/eg
-  silent s/Ì/\&Igrave;/eg
-  silent s/Í/\&Iacute;/eg
-  silent s/Î/\&Icirc;/eg
-  silent s/Ï/\&Iuml;/eg
-  silent s/Ð/\&ETH;/eg
-  silent s/Ñ/\&Ntilde;/eg
-  silent s/Ò/\&Ograve;/eg
-  silent s/Ó/\&Oacute;/eg
-  silent s/Ô/\&Ocirc;/eg
-  silent s/Õ/\&Otilde;/eg
-  silent s/Ö/\&Ouml;/eg
-  silent s/Ø/\&Oslash;/eg
-  silent s/Ù/\&Ugrave;/eg
-  silent s/Ú/\&Uacute;/eg
-  silent s/Û/\&Ucirc;/eg
-  silent s/Ü/\&Uuml;/eg
-  silent s/Ý/\&Yacute;/eg
-  silent s/Þ/\&THORN;/eg
-  silent s/ß/\&szlig;/eg
-  silent s/à/\&agrave;/eg
-  silent s/á/\&aacute;/eg
-  silent s/â/\&acirc;/eg
-  silent s/ã/\&atilde;/eg
-  silent s/ä/\&auml;/eg
-  silent s/å/\&aring;/eg
-  silent s/æ/\&aelig;/eg
-  silent s/ç/\&ccedil;/eg
-  silent s/è/\&egrave;/eg
-  silent s/é/\&eacute;/eg
-  silent s/ê/\&ecirc;/eg
-  silent s/ë/\&euml;/eg
-  silent s/ì/\&igrave;/eg
-  silent s/í/\&iacute;/eg
-  silent s/î/\&icirc;/eg
-  silent s/ï/\&iuml;/eg
-  silent s/ð/\&eth;/eg
-  silent s/ñ/\&ntilde;/eg
-  silent s/ò/\&ograve;/eg
-  silent s/ó/\&oacute;/eg
-  silent s/ô/\&ocirc;/eg
-  silent s/õ/\&otilde;/eg
-  silent s/ö/\&ouml;/eg
-  silent s/ø/\&oslash;/eg
-  silent s/ù/\&ugrave;/eg
-  silent s/ú/\&uacute;/eg
-  silent s/û/\&ucirc;/eg
-  silent s/ü/\&uuml;/eg
-  silent s/ý/\&yacute;/eg
-  silent s/þ/\&thorn;/eg
-  silent s/ÿ/\&yuml;/eg
-  silent s/’/\&#x92;/eg
+    silent s/À/\&Agrave;/eg
+    silent s/Á/\&Aacute;/eg
+    silent s/Â/\&Acirc;/eg
+    silent s/Ã/\&Atilde;/eg
+    silent s/Ä/\&Auml;/eg
+    silent s/Å/\&Aring;/eg
+    silent s/Æ/\&AElig;/eg
+    silent s/Ç/\&Ccedil;/eg
+    silent s/È/\&Egrave;/eg
+    silent s/É/\&Eacute;/eg
+    silent s/Ê/\&Ecirc;/eg
+    silent s/Ë/\&Euml;/eg
+    silent s/Ì/\&Igrave;/eg
+    silent s/Í/\&Iacute;/eg
+    silent s/Î/\&Icirc;/eg
+    silent s/Ï/\&Iuml;/eg
+    silent s/Ð/\&ETH;/eg
+    silent s/Ñ/\&Ntilde;/eg
+    silent s/Ò/\&Ograve;/eg
+    silent s/Ó/\&Oacute;/eg
+    silent s/Ô/\&Ocirc;/eg
+    silent s/Õ/\&Otilde;/eg
+    silent s/Ö/\&Ouml;/eg
+    silent s/Ø/\&Oslash;/eg
+    silent s/Ù/\&Ugrave;/eg
+    silent s/Ú/\&Uacute;/eg
+    silent s/Û/\&Ucirc;/eg
+    silent s/Ü/\&Uuml;/eg
+    silent s/Ý/\&Yacute;/eg
+    silent s/Þ/\&THORN;/eg
+    silent s/ß/\&szlig;/eg
+    silent s/à/\&agrave;/eg
+    silent s/á/\&aacute;/eg
+    silent s/â/\&acirc;/eg
+    silent s/ã/\&atilde;/eg
+    silent s/ä/\&auml;/eg
+    silent s/å/\&aring;/eg
+    silent s/æ/\&aelig;/eg
+    silent s/ç/\&ccedil;/eg
+    silent s/è/\&egrave;/eg
+    silent s/é/\&eacute;/eg
+    silent s/ê/\&ecirc;/eg
+    silent s/ë/\&euml;/eg
+    silent s/ì/\&igrave;/eg
+    silent s/í/\&iacute;/eg
+    silent s/î/\&icirc;/eg
+    silent s/ï/\&iuml;/eg
+    silent s/ð/\&eth;/eg
+    silent s/ñ/\&ntilde;/eg
+    silent s/ò/\&ograve;/eg
+    silent s/ó/\&oacute;/eg
+    silent s/ô/\&ocirc;/eg
+    silent s/õ/\&otilde;/eg
+    silent s/ö/\&ouml;/eg
+    silent s/ø/\&oslash;/eg
+    silent s/ù/\&ugrave;/eg
+    silent s/ú/\&uacute;/eg
+    silent s/û/\&ucirc;/eg
+    silent s/ü/\&uuml;/eg
+    silent s/ý/\&yacute;/eg
+    silent s/þ/\&thorn;/eg
+    silent s/ÿ/\&yuml;/eg
+    silent s/’/\&#x92;/eg
 endfunction
 
 " for typos
@@ -184,83 +184,98 @@ let g:pydiction_location='~/.vim/bundle/Pydiction/complete-dict'
 " Uncomment the following to have Vim jump to the last position when                                                       
 " reopening a file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+                \| exe "normal! g'\"" | endif
 endif
 
 "Neocomplcache
 
-        let g:neocomplcache_enable_at_startup = 1
-        let g:neocomplcache_enable_camel_case_completion = 1
-        let g:neocomplcache_enable_smart_case = 1
-        let g:neocomplcache_enable_underbar_completion = 1
-        let g:neocomplcache_min_syntax_length = 3
-        let g:neocomplcache_enable_auto_delimiter = 1
-        let g:neocomplcache_max_list = 15
-        let g:neocomplcache_auto_completion_start_length = 3
-        let g:neocomplcache_force_overwrite_completefunc = 1
-        let g:neocomplcache_snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_enable_auto_delimiter = 1
+let g:neocomplcache_max_list = 15
+let g:neocomplcache_auto_completion_start_length = 3
+let g:neocomplcache_force_overwrite_completefunc = 1
+let g:neocomplcache_snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
 
-        " AutoComplPop like behavior.
-        let g:neocomplcache_enable_auto_select = 0
+" AutoComplPop like behavior.
+let g:neocomplcache_enable_auto_select = 0
 
-        " SuperTab like snippets behavior.
-        imap  <silent><expr><tab>  neocomplcache#sources#snippets_complete#expandable() ? "\<plug>(neocomplcache_snippets_expand)" : (pumvisible() ? "\<c-e>" : "\<tab>")
-        smap  <tab>  <right><plug>(neocomplcache_snippets_jump) 
+" SuperTab like snippets behavior.
+imap  <silent><expr><tab>  neocomplcache#sources#snippets_complete#expandable() ? "\<plug>(neocomplcache_snippets_expand)" : (pumvisible() ? "\<c-e>" : "\<tab>")
+smap  <tab>  <right><plug>(neocomplcache_snippets_jump) 
 
-        " Plugin key-mappings.
-        " Ctrl-k expands snippet & moves to next position
-        " <CR> chooses highlighted value
-        imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-        smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-        inoremap <expr><C-g>   neocomplcache#undo_completion()
-        inoremap <expr><C-l>   neocomplcache#complete_common_string()
-        inoremap <expr><CR>    neocomplcache#complete_common_string()
+" Plugin key-mappings.
+" Ctrl-k expands snippet & moves to next position
+" <CR> chooses highlighted value
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>   neocomplcache#undo_completion()
+inoremap <expr><C-l>   neocomplcache#complete_common_string()
+inoremap <expr><CR>    neocomplcache#complete_common_string()
 
 
-        " <CR>: close popup
-        " <s-CR>: close popup and save indent.
-        inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup()"\<CR>" : "\<CR>"
-        inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+" <CR>: close popup
+" <s-CR>: close popup and save indent.
+inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup()"\<CR>" : "\<CR>"
+inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 
-        " <TAB>: completion.
-        inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-        inoremap <expr><s-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><s-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
-        " <C-h>, <BS>: close popup and delete backword char.
-        inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-        inoremap <expr><C-y>  neocomplcache#close_popup()
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
 
-        " Define keyword.
-        if !exists('g:neocomplcache_keyword_patterns')
-          let g:neocomplcache_keyword_patterns = {}
-        endif
-        let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-        " Enable omni completion.
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-        autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
-        " Enable heavy omni completion.
-        if !exists('g:neocomplcache_omni_patterns')
-            let g:neocomplcache_omni_patterns = {}
-        endif
-        let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-        let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-        let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-        let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
-        " For snippet_complete marker.
-        if has('conceal')
-            set conceallevel=2 concealcursor=i
-        endif
+" For snippet_complete marker.
+if has('conceal')
+    set conceallevel=2 concealcursor=i
+endif
 "Highlight problematic whitespace
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
 
 "Allow tabluarizing of puppet files
-set AddTabularPattern block /=>
+
+function! CustomTabularPatterns()
+    if exists('g:tabular_loaded')
+        AddTabularPattern! block /=>
+        AddTabularPattern! assignment      / = /l0
+        AddTabularPattern! chunks          / \S\+/l0
+        AddTabularPattern! colon           /:\zs /l0
+        AddTabularPattern! comma           /^[^,]*,/l1
+        AddTabularPattern! hash            /^[^>]*\zs=>/
+        AddTabularPattern! options_hashes  /:\w\+ =>/
+        AddTabularPattern! symbol          /^[^:]*\zs:/l1r0
+        AddTabularPattern! symbols         / :/l0
+        AddTabularPattern! doublequote     /"/l5c1
+    endif
+endfunction
+autocmd VimEnter * call CustomTabularPatterns()
