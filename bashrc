@@ -105,6 +105,8 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias whatismyip='curl http://whatismyip.org/ && echo'
 alias json='python -mjson.tool'
 alias pip_upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
+alias dmesg='dmesg -T'
+alias tail='tail -f -n500'
 uname=`uname`
 if [[ $uname == 'Linux' ]]; then
 	alias ls='ls -lah --color'
