@@ -6,4 +6,5 @@ Host h4
     User growse
 
 Host *.andrewdns.com
+    User growse
     IdentityFile ~/.ssh/andrewdns.com.key
