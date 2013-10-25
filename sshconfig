@@ -1,3 +1,5 @@
+VerifyHostKeyDNS yes
+
 Host github.com
     IdentityFile ~/.ssh/github@growse.com.key
 
