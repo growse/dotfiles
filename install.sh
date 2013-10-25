@@ -22,6 +22,10 @@ ln -s $DOTFILES/screenrc ~/.screenrc
 mv ~/.dir_colors ~/.dir_colors.old 2> /dev/null
 ln -s $DOTFILES/dircolors/dircolors.ansi-dark ~/.dir_colors
 
+# sshconfig
+rm ~/.ssh/config
+ln -s $DOTFILES/sshconfig ~/.ssh/config
+
 if [ -f /etc/redhat-release ]
 then
     sudo yum -y install ctags-etags
