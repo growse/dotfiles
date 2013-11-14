@@ -7,6 +7,11 @@ Host h4
     HostName 109.123.84.240
     User growse
 
+Host h4work
+    HostName 109.123.84.240
+    User growse
+    ProxyCommand corkscrew 159.104.35.36 8080 %h %p
+
 Host *.andrewdns.com
     Port 1022
     User growse
