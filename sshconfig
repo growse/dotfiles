@@ -16,3 +16,9 @@ Host *.andrewdns.com
     Port 1022
     User growse
     IdentityFile ~/.ssh/andrewdns.com.key
+
+Host *bot
+    User growse
+
+Host *.growse.com
+    User growse
