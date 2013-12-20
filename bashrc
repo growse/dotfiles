@@ -98,7 +98,7 @@ export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 # Aliases and commands
-alias ls='ls -F'
+alias ls='ls -lah'
 alias v='ls -ahlO'
 alias cls='clear'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
