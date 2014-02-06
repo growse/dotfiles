@@ -37,7 +37,7 @@ _set_git_prompt_string() {
 
 _set_virtualenv_prompt_string() {
 	if [[ ! -z "$VIRTUAL_ENV" ]]; then
-		PS1_VIRTUALENV="(`basename \"$VIRTUAL_ENV\"`)"
+		PS1_VIRTUALENV=" [`basename \"$VIRTUAL_ENV\"`]"
 	else
 		PS1_VIRTUALENV=""
 	fi
