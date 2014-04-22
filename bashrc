@@ -48,6 +48,7 @@ _set_virtualenv_prompt_string() {
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
 export NODE_PATH=/usr/local/lib/node
+export ANDROID_HOME=~/Applications/android-sdk/
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]
