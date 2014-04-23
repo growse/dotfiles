@@ -19,6 +19,7 @@ Host *.andrewdns.com
 
 Host *bot
     User growse
+    IdentityFile ~/.ssh/growse.com.key
 
 Host *.growse.com
     User growse
