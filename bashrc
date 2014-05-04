@@ -109,6 +109,7 @@ alias pip_upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs 
 alias dmesg='dmesg -T'
 alias tail='tail -f -n500'
 alias cp="rsync -avz --progress"
+alias it="sudo apt-get install \$(history -p !apt-cache:2)"
 uname=`uname`
 if [[ $uname == 'Linux' ]]; then
 	alias ls='ls -lah --color'
