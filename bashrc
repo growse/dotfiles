@@ -48,7 +48,7 @@ _set_virtualenv_prompt_string() {
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
 export NODE_PATH=/usr/local/lib/node
-export ANDROID_HOME=~/Applications/android-sdk/
+export GOPATH=~/Projects/golang/
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]
@@ -164,3 +164,5 @@ if [ -f ~/.bashrc.local ]; then
 	. ~/.bashrc.local
 fi
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
