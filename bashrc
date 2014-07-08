@@ -47,8 +47,8 @@ _set_virtualenv_prompt_string() {
 # Paths and environment variables for non-interactive shells
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
-export NODE_PATH=/usr/local/lib/node
-export ANDROID_HOME=~/Applications/android-studio/sdk/
+export GOPATH=~/Projects/golang/
+export ANDROID_HOME=~/Applications/android-studio/sdk
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]
@@ -110,6 +110,7 @@ alias dmesg='dmesg -T'
 alias tail='tail -f -n500'
 alias cp="rsync -avz --progress"
 alias it="sudo apt-get install \$(history -p !apt-cache:2)"
+alias docker="docker.io"
 uname=`uname`
 if [[ $uname == 'Linux' ]]; then
 	alias ls='ls -lah --color'
@@ -164,3 +165,5 @@ if [ -f ~/.bashrc.local ]; then
 	. ~/.bashrc.local
 fi
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
