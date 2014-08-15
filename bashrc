@@ -47,7 +47,6 @@ _set_virtualenv_prompt_string() {
 # Paths and environment variables for non-interactive shells
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
-export NODE_PATH=/usr/local/lib/node
 export GOPATH=~/Projects/golang/
 export ANDROID_HOME=~/Applications/android-studio/sdk
 
