@@ -21,9 +21,16 @@ Host *bot
     User growse
     IdentityFile ~/.ssh/growse.com.key
 
+Host gosh.growse.com
+    VerifyHostKeyDNS no
+
 Host *.growse.com
     User growse
     IdentityFile ~/.ssh/growse.com.key
 
 Host *.launchpad.net
     IdentityFile ~/.ssh/launchpad.key
+
+Host n*
+    User root
+    IdentityFile ~/.ssh/growse.com.key
