@@ -18,6 +18,10 @@ ln -s $DOTFILES/vim ~/.vim
 mv ~/.screenrc ~/.screenrc.old 2> /dev/null
 ln -s $DOTFILES/screenrc ~/.screenrc
 
+# tmux
+mv ~/.tmux.conf ~/.tmux.conf.old 2> /dev/null
+ln -s $DOTFILES/tmux.conf ~/.tmux.conf
+
 # dircolors
 mv ~/.dir_colors ~/.dir_colors.old 2> /dev/null
 ln -s $DOTFILES/dircolors/dircolors.ansi-dark ~/.dir_colors
