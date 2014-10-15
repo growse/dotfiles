@@ -33,11 +33,6 @@
 	url = https://github.com/tpope/vim-surround.git
 	ignore = untracked
 	branch = master
-[submodule "vim/bundle/vcscommand"]
-	path = vim/bundle/vcscommand
-	url = http://repo.or.cz/r/vcscommand.git
-	ignore = untracked
-	branch = master
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
@@ -100,3 +95,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
