@@ -1,8 +1,5 @@
 VerifyHostKeyDNS yes
 
-Host github.com
-    IdentityFile ~/.ssh/github@growse.com.key
-
 Host h4
     HostName 109.123.84.240
     User growse
