@@ -48,7 +48,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-syntax enable
 filetype off
 filetype plugin indent on
 colorscheme solarized
@@ -213,3 +212,4 @@ function! CustomTabularPatterns()
     endif
 endfunction
 autocmd VimEnter * call CustomTabularPatterns()
+syntax enable
