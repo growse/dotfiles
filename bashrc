@@ -49,6 +49,7 @@ PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
 export GOPATH=~/Projects/golang/
 export ANDROID_HOME=~/Applications/android-studio/sdk
+export GPG_TTY=$(tty)
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]
