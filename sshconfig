@@ -1,6 +1,4 @@
-Host h4
-    HostName 109.123.84.240
-    User growse
+VerifyHostKeyDNS yes
 
 Host h4work
     HostName 109.123.84.240
@@ -14,7 +12,9 @@ Host gosh.growse.com
     VerifyHostKeyDNS no
 
 Host *.growse.com
+    VerifyHostKeyDNS yes
     User growse
 
-Host n*
-    User root
+Host *.andrewdns.com
+    VerifyHostKeyDNS yes
+    User growse
