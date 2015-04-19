@@ -104,7 +104,7 @@ alias ls='ls -lah'
 alias v='ls -ahlO'
 alias cls='clear'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
-alias whatismyip='curl http://whatismyip.org/ && echo'
+alias whatismyip="curl 'http://api.ipify.org?format=json'"
 alias json='python -mjson.tool'
 alias pip_upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 alias dmesg='dmesg -T'
