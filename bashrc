@@ -48,7 +48,7 @@ _set_virtualenv_prompt_string() {
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
 export GOPATH=~/Projects/golang/
-export ANDROID_HOME=~/Applications/android-studio/sdk
+export ANDROID_HOME=/usr/local/opt/android-sdk
 export GPG_TTY=$(tty)
 
 # If this is a non-interactive shell, return
@@ -166,4 +166,6 @@ fi
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export HOMEBREW_GITHUB_API_TOKEN=1846c3f016370fe4d550433f0b4aabdb665e5f46
+if [[ `uname` == "Darwin" ]]; then
+    export HOMEBREW_GITHUB_API_TOKEN=1846c3f016370fe4d550433f0b4aabdb665e5f46
+fi
