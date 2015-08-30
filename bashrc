@@ -168,4 +168,6 @@ fi
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 if [[ `uname` == "Darwin" ]]; then
     export HOMEBREW_GITHUB_API_TOKEN=1846c3f016370fe4d550433f0b4aabdb665e5f46
+    alias find='ffind'
+    alias locate='mdfind'
 fi
