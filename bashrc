@@ -171,3 +171,10 @@ if [[ `uname` == "Darwin" ]]; then
     alias find='ffind'
     alias locate='mdfind'
 fi
+
+#History sanity
+shopt -s histappend
+  export HISTSIZE=100000
+  export HISTFILESIZE=100000
+  export HISTCONTROL=ignoredups:erasedups
+  export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
