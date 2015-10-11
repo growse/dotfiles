@@ -6,51 +6,31 @@ if has("mouse")
     set mousehide
 endif
 
-if has("gui_running") " gvim/win32 fails to do this automatically
-    set lines=50 columns=100
-    if has("gui_win32")
-        source $VIMRUNTIME/mswin.vim
-        set guifont=Consolas:h10:cANSI
-        set background=dark
-    else
-        set guifont=Inconsolata:h14
-        set background=light
-    endif
-else
-    set background=dark
-endif
-
-if has("win32")
-    cd $HOME " Default cwd is System32, which is stupid
-endif
+set background=dark         " All terminals have dark backgrounds
+colorscheme solarized       " I like solarized
+set tabstop=4               " Number of visual spaces per tab
+set softtabstop=4           " Number of spaces to use when tab editing
+set shiftwidth=4            " >> and << should go forward / back 1 tab
+set expandtab               " Tabs are spaces
+set number                  " Show line numbers
+set cursorline              " Hihgligh the current line
+filetype plugin indent on   " Indent please
+syntax enable               " Syntax highlighting 
+set wildmenu                " Enable autocomplete for command
+set wildmode=list:longest,full
+set showmatch               " Highlight closing parentheses
+set nowrap                  " Don't wrap lines by default
 
 " Search options
-set hlsearch    " Highlight search results
-set smartcase   " Search strings that are all-lowercase will do a case-insensitive search
-set incsearch   " Incremental search
+set hlsearch                " Highlight search results
+set smartcase               " Search strings that are all-lowercase will do a case-insensitive search
+set incsearch               " Incremental search
 nnoremap <CR> :noh<CR><CR>  " Clear search highlight by hitting enter
-
-set number      " Show line numbers
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set softtabstop=4
-set hlsearch    " Highlight search results
-set smartcase   " Search strings that are all-lowercase will do a case-insensitive search
-set incsearch   " Incremental search
-set ignorecase
-set wildmode=list:longest,full
-set wildmenu
-set nowrap
 
 "Disable swap
 set nobackup
 set nowritebackup
 set noswapfile
-
-filetype off
-filetype plugin indent on
-colorscheme solarized
 
 set laststatus=2
 set statusline=[%l,%v\ %P%M]\ %f\ %y%r%w[%{&ff}]%{fugitive#statusline()}\ %b\ 0x%B
@@ -64,10 +44,6 @@ autocmd Filetype taskpaper set background=light
 " Run wrapwithtag.vim script when opening html docs (shouldn't this be a
 " filetype plugin? meh.)
 autocmd Filetype html,xml,aspvbs runtime scripts/wrapwithtag.vim
-
-" Use aspvbs filetype for .asa and .asp files so we get syntax highlighting
-let g:filetype_asa = "aspvbs"
-let g:filetype_asp = "aspvbs"
 
 " Use Groovy syntax highlighting for gradle buildfiles
 au BufNewFile,BufRead *.gradle setf groovy
@@ -178,6 +154,7 @@ endfunction
 " for typos
 map :W :w
 map :E :e
+map :X :x
 let g:pydiction_location='~/.vim/bundle/Pydiction/complete-dict'
 
 " Uncomment the following to have Vim jump to the last position when                                                       
@@ -212,4 +189,3 @@ function! CustomTabularPatterns()
     endif
 endfunction
 autocmd VimEnter * call CustomTabularPatterns()
-syntax enable
