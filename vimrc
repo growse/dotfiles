@@ -18,8 +18,9 @@ filetype plugin indent on   " Indent please
 syntax enable               " Syntax highlighting 
 set wildmenu                " Enable autocomplete for command
 set wildmode=list:longest,full
-set showmatch               " Highlight closing parentheses
-set nowrap                  " Don't wrap lines by default
+set showmatch                   " Highlight closing parentheses
+set nowrap                      " Don't wrap lines by default
+set backspace=indent,eol,start  " Make backspace work
 
 " Search options
 set hlsearch                " Highlight search results
