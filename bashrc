@@ -171,6 +171,9 @@ if [[ `uname` == "Darwin" ]]; then
     alias locate='mdfind'
 fi
 
+#awscli complete
+complete -C aws_completer aws
+
 #History sanity
 shopt -s histappend
   export HISTSIZE=100000
