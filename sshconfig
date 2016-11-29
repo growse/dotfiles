@@ -1,11 +1,7 @@
 VerifyHostKeyDNS yes
 
-Host h4work
-    HostName 109.123.84.240
-    User growse
-    ProxyCommand corkscrew 159.104.35.36 8080 %h %p
-
 Host *bot
+    HostName %h.growse.com
     User growse
 
 Host gosh.growse.com
