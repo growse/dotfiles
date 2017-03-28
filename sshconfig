@@ -2,15 +2,11 @@ VerifyHostKeyDNS yes
 
 Host *bot
     HostName %h.growse.com
+    ForwardAgent yes
     User growse
 
-Host gosh.growse.com
-    VerifyHostKeyDNS no
-
 Host *.growse.com
-    VerifyHostKeyDNS yes
     User growse
 
 Host *.andrewdns.com
-    VerifyHostKeyDNS yes
     User growse
