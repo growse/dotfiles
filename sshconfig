@@ -1,6 +1,6 @@
 VerifyHostKeyDNS yes
 
-Host *bot
+Host *bot *bot0?
     HostName %h.growse.com
     ForwardAgent yes
     User growse
