@@ -1,0 +1,5 @@
+[user]
+	email = github@growse.com
+	name = growse
+[http "https://gopkg.in"]
+	followRedirects = true

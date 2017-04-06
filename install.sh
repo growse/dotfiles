@@ -30,6 +30,10 @@ ln -s $DOTFILES/dircolors/dircolors.ansi-dark ~/.dir_colors
 rm ~/.ssh/config
 ln -s $DOTFILES/sshconfig ~/.ssh/config
 
+# gitconfig
+rm ~/.gitconfig
+ln -s $DOTFILES/gitconfig ~/.gitconfig
+
 if [ -f /etc/redhat-release ]
 then
     sudo yum -y install ctags-etags
