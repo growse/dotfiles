@@ -48,7 +48,7 @@ _set_virtualenv_prompt_string() {
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
 export GOPATH=~/Projects/golang/
-export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_HOME=/opt/android-sdk
 export GPG_TTY=$(tty)
 
 # If this is a non-interactive shell, return
@@ -91,7 +91,7 @@ if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
 else
     PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
 fi
-PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;_set_virtualenv_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_VIRTUALENV}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
+#PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;_set_virtualenv_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_VIRTUALENV}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
 
 
 
@@ -181,3 +181,5 @@ shopt -s histappend
   export HISTFILESIZE=100000
   export HISTCONTROL=ignoredups:erasedups
   export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+
+. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
