@@ -182,4 +182,8 @@ shopt -s histappend
   export HISTCONTROL=ignoredups:erasedups
   export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
-. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+if [ -f /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+elif [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+    . /usr/share/powerline/bindings/bash/powerline.sh
+fi
