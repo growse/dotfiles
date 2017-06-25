@@ -1,8 +1,3 @@
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-	ignore = untracked
-	branch = master
 [submodule "vim/bundle/css-colors"]
 	path = vim/bundle/css-colors
 	url = https://github.com/skammer/vim-css-color.git
@@ -98,3 +93,6 @@
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim/bundle/vim-dues"]
+	path = vim/bundle/vim-dues
+	url = https://github.com/ajmwagar/vim-dues.git

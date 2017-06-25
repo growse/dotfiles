@@ -7,7 +7,7 @@ if has("mouse")
 endif
 
 set background=dark         " All terminals have dark backgrounds
-colorscheme solarized       " I like solarized
+colorscheme dues       " I like solarized
 set tabstop=4               " Number of visual spaces per tab
 set softtabstop=4           " Number of spaces to use when tab editing
 set shiftwidth=4            " >> and << should go forward / back 1 tab
