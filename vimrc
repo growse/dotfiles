@@ -165,10 +165,6 @@ if has("autocmd")
                 \| exe "normal! g'\"" | endif
 endif
 
-" For snippet_complete marker.
-if has('conceal')
-    set conceallevel=2 concealcursor=i
-endif
 "Highlight problematic whitespace
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
