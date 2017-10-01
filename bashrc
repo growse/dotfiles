@@ -183,18 +183,18 @@ shopt -s histappend
   export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 
-if [[ $(uname -m) != *"arm"* ]]; then
-    if [ -f /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]; then
+if [[ $(uname -m) != *"arm"* ]] ; then
+    if [[ -f /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]]; then
         . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
-    elif [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+    elif [[ -f /usr/share/powerline/bindings/bash/powerline.sh ]] ; then
         . /usr/share/powerline/bindings/bash/powerline.sh
     fi
 fi
 
-if [ -z $SSH_CLIENT ] ; then
+if [[ -z ${SSH_CLIENT+x} ]] ; then
     # Set SSH to use gpg-agent
     unset SSH_AGENT_PID
-    if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+    if [[ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]] ; then
       export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
     fi
 
