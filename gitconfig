@@ -11,7 +11,7 @@
 	prune = fetch --prune
 	stashall = stash save --include-untracked
 [commit]
-	gpgSign = true
+	gpgSign = false
 [push]
 	default = simple
 	followTags = true
@@ -21,3 +21,5 @@
 	program = gpg2
 [pull]
 	rebase = true
+[core]
+	editor = vim

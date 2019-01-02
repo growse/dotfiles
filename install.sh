@@ -14,10 +14,6 @@ mv ~/.vim ~/.vim.old 2> /dev/null
 ln -s $DOTFILES/vimrc ~/.vimrc
 ln -s $DOTFILES/vim ~/.vim
 
-# screen
-mv ~/.screenrc ~/.screenrc.old 2> /dev/null
-ln -s $DOTFILES/screenrc ~/.screenrc
-
 # tmux
 mv ~/.tmux.conf ~/.tmux.conf.old 2> /dev/null
 ln -s $DOTFILES/tmux.conf ~/.tmux.conf
