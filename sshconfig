@@ -1,4 +1,4 @@
-VerifyHostKeyDNS yes
+VerifyHostKeyDNS no
 
 Host *bot *bot0?
     HostName %h.growse.com
