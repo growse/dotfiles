@@ -23,11 +23,11 @@ mv ~/.dir_colors ~/.dir_colors.old 2> /dev/null
 ln -s $DOTFILES/dircolors/dircolors.ansi-dark ~/.dir_colors
 
 # sshconfig
-rm ~/.ssh/config
+rm -f ~/.ssh/config
 ln -s $DOTFILES/sshconfig ~/.ssh/config
 
 # gitconfig
-rm ~/.gitconfig
+rm -f ~/.gitconfig
 ln -s $DOTFILES/gitconfig ~/.gitconfig
 
 if [ -f /etc/redhat-release ]
