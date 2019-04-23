@@ -1,7 +1,7 @@
 .PHONY: clean install
 
 
-install: ~/.bashrc ~/.vimrc ~/.vim ~/.dir_colors ~/.gitconfig
+install: ~/.bashrc ~/.vimrc ~/.vim ~/.dir_colors ~/.gitconfig ~/.tmux.conf
 
 ~/.bashrc:
 	ln -s $(CURDIR)/bashrc ~/.bashrc
@@ -18,10 +18,14 @@ install: ~/.bashrc ~/.vimrc ~/.vim ~/.dir_colors ~/.gitconfig
 ~/.gitconfig:
 	ln -s $(CURDIR)/gitconfig ~/.gitconfig
 
+~/.tmux.conf:
+	ln -s $(CURDIR)/tmux.conf ~/.tmux.conf
+
 clean:
 	rm -f ~/.bashrc
 	rm -f ~/.vimrc
 	rm -f ~/.vim
 	rm -f ~/dir_colors
 	rm -f ~/.gitconfig
+	rm -f ~/.tmux.conf
 
