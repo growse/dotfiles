@@ -25,7 +25,7 @@ clean:
 	rm -f ~/.bashrc
 	rm -f ~/.vimrc
 	rm -f ~/.vim
-	rm -f ~/dir_colors
+	rm -f ~/.dir_colors
 	rm -f ~/.gitconfig
 	rm -f ~/.tmux.conf
 
