@@ -58,11 +58,11 @@
 
     <!--
 	Notify user by terminal bell and/or screen flash.
+    -->
 
     <notify
 	beep="true"
 	flash="true"/>
-    -->
 
     <!--
 	plugin-dir  : directory containing host plugins
