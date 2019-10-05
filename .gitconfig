@@ -1,0 +1,26 @@
+[user]
+	email = github@growse.com
+	name = Andrew Rowson
+	signingKey = 505032AA37B241D1
+[http "https://gopkg.in"]
+	followRedirects = true
+[merge]
+	ff = only
+	conflictstyle = diff3
+[alias]
+	prune = fetch --prune
+	stashall = stash save --include-untracked
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[commit]
+	gpgSign = false
+[push]
+	default = simple
+	followTags = true
+[status]
+	showUntrackedFiles = all
+[gpg]
+	program = gpg2
+[pull]
+	rebase = true
+[core]
+	editor = vim
