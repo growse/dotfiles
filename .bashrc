@@ -206,3 +206,6 @@ if [[ -z ${SSH_CLIENT+x} ]] ; then
 
 fi
 
+if [[ -f ~/.config/broot/launcher/bash/rc ]]; then
+    source /home/growse/.config/broot/launcher/bash/br
+fi
