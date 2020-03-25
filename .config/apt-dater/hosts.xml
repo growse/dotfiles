@@ -57,6 +57,7 @@
       <host name="sensorbot04" />
       <host name="sensorbot05" />
       <host name="sensorbot06" />
+      <host name="sensorbot07" />
   </group>
   <group name="k8s">
     <host name="serverbot" />
@@ -65,7 +66,7 @@
   </group>
 
   <group name="misc">
-    <host name="talkbot" />
+    <host name="talktoobot" />
     <host name="tinybot" />
   </group>
 </hosts>
