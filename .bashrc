@@ -101,16 +101,16 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 # Aliases and commands
 alias ls='ls -lah'
+alias ll='ls -laht'
 alias v='ls -ahlO'
 alias cls='clear'
-alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias whatismyip="curl 'http://api.ipify.org?format=json'"
 alias json='python -mjson.tool'
 alias pip_upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 alias dmesg='dmesg -T'
 alias tail='tail -f -n500'
 alias it="sudo apt-get install \$(history -p !apt-cache:2)"
-alias weather='curl wttr.in/london'
+alias weather='curl wttr.in/wakefield'
 uname=`uname`
 if [[ $uname == 'Linux' ]]; then
 	alias ls='ls -lah --color'
