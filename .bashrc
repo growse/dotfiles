@@ -160,22 +160,17 @@ if _command_exists dircolors; then
     eval `dircolors --bourne-shell ~/.dir_colors`
 fi
 
-# Run local config
-if [ -f ~/.bashrc.local ]; then
-	. ~/.bashrc.local
-fi
-
-
+## RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 if [[ `uname` == "Darwin" ]]; then
     alias find='ffind'
     alias locate='mdfind'
 fi
 
-#awscli complete
+## awscli complete
 complete -C aws_completer aws
 
-#History sanity
+## History sanity
 shopt -s histappend
   export HISTSIZE=100000
   export HISTFILESIZE=100000
@@ -191,23 +186,43 @@ if [[ $(uname -m) != *"arm"* ]] ; then
     fi
 fi
 
-if [[ -z ${SSH_CLIENT+x} ]] ; then
-    # Set SSH to use gpg-agent
-    unset SSH_AGENT_PID
-#    if [[ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]] ; then
-#        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-#    fi
+## SSH Agent
+env=~/.ssh/agent.env
 
-    # Set GPG TTY
-    export GPG_TTY=$(tty)
+agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
 
-    # Refresh gpg-agent tty in case user switches into an X session
-    gpg-connect-agent updatestartuptty /bye >/dev/null
+agent_start () {
+    (umask 077; ssh-agent >| "$env")
+    . "$env" >| /dev/null ; }
 
+agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+add_all_keys() {
+  ls ~/.ssh | grep ^id_rsa.*$ | sed "s:^:`echo ~`/.ssh/:" | xargs -n 1 ssh-add -q
+}
+
+if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+    agent_start
+    add_all_keys
+elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+    add_all_keys
 fi
 
+unset env
+
+## BRoot
 [[ -f ~/.config/broot/launcher/bash/rc ]] &&  source /home/growse/.config/broot/launcher/bash/br
 
+## NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Run local config
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
+fi
+
