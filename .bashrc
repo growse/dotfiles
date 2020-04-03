@@ -200,15 +200,8 @@ agent_load_env
 # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
 agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 
-add_all_keys() {
-  ls ~/.ssh | grep ^id_rsa.*$ | sed "s:^:`echo ~`/.ssh/:" | xargs -n 1 ssh-add -q
-}
-
 if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
     agent_start
-    add_all_keys
-elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-    add_all_keys
 fi
 
 unset env
