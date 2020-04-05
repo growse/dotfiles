@@ -48,8 +48,9 @@ _set_virtualenv_prompt_string() {
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
 export GOPATH=~/Projects/golang/
-export ANDROID_HOME=/opt/android-sdk
 export GPG_TTY=$(tty)
+export HELM_NAMESPACE="helmthings"
+
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]
