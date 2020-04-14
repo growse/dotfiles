@@ -216,7 +216,7 @@ trap merge_session_history EXIT
 # detect leftover files from crashed sessions and merge them back
 active_shells=$(pgrep `ps -p $$ -o comm=`)
 grep_pattern=`for pid in $active_shells; do echo -n "-e \.${pid}\$ "; done`
-orphaned_files=`ls $HISTFILE.[0-9]* 2>/dev/null | grep -v $grep_pattern`
+orphaned_files=`/bin/ls $HISTFILE.[0-9]* 2>/dev/null | grep -v $grep_pattern`
 
 if [ -n "$orphaned_files" ]; then
   echo Merging orphaned history files:
