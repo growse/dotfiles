@@ -1,3 +1,4 @@
+# shellcheck shell=bash disable=SC2034
 # Internal commands
 _path_add() {
     # Adds a directory to $PATH, but only if it isn't already present.
@@ -37,7 +38,7 @@ _set_git_prompt_string() {
 
 _set_virtualenv_prompt_string() {
 	if [[ ! -z "$VIRTUAL_ENV" ]]; then
-		PS1_VIRTUALENV=" [`basename \"$VIRTUAL_ENV\"`]"
+		PS1_VIRTUALENV=" [$(basename \"$VIRTUAL_ENV\")]"
 	else
 		PS1_VIRTUALENV=""
 	fi
@@ -107,7 +108,11 @@ alias json='python -mjson.tool'
 alias pip_upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 alias dmesg='dmesg -T'
 alias tail='tail -f -n500'
-uname=`uname`
+if _command_exists ffind; then
+	alias find='ffind'
+fi
+
+uname=$(uname)
 if [[ $uname == 'Linux' ]]; then
 	alias ls='ls -lah --color'
 else
@@ -116,21 +121,21 @@ fi
 	
 mkcd() {
     dir="$*";
-    mkdir -p "$dir" && cd "$dir";
+    mkdir -p "$dir" && cd "$dir" || exit;
 }
 extract () {
-    if [ -f $1 ] ; then
+    if [ -f "$1" ] ; then
         case $1 in
-            *.tar.bz2)  tar xjf $1      ;;
-            *.tar.gz)   tar xzf $1      ;;
-            *.bz2)      bunzip2 $1      ;;
-            *.rar)      rar x $1        ;;
-            *.gz)       gunzip $1       ;;
-            *.tar)      tar xf $1       ;;
-            *.tbz2)     tar xjf $1      ;;
-            *.tgz)      tar xzf $1      ;;
-            *.zip)      unzip $1        ;;
-            *.Z)        uncompress $1   ;;
+            *.tar.bz2)  tar xjf "$1"      ;;
+            *.tar.gz)   tar xzf "$1"      ;;
+            *.bz2)      bunzip2 "$1"      ;;
+            *.rar)      rar x "$1"        ;;
+            *.gz)       gunzip "$1"       ;;
+            *.tar)      tar xf "$1"       ;;
+            *.tbz2)     tar xjf "$1"      ;;
+            *.tgz)      tar xzf "$1"      ;;
+            *.zip)      unzip "$1"        ;;
+            *.Z)        uncompress "$1"   ;;
             *)          echo "'$1' cannot be extracted via extract()" ;;
     esac
     else
@@ -138,7 +143,7 @@ extract () {
     fi
 }
 if _command_exists hub; then
-	`hub alias -s bash`
+	hub alias -s bash
 fi
 
 # Show the fortune while we set up other things
@@ -152,16 +157,14 @@ if [ -f /usr/local/etc/bash_completion ]; then
 elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+export CLICOLOR=YES
 if _command_exists dircolors; then
-    eval `dircolors --bourne-shell ~/.dir_colors`
+    eval "$(dircolors --bourne-shell ~/.dir_colors)"
 fi
 
 ## RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-if [[ `uname` == "Darwin" ]]; then
-    alias find='ffind'
-    alias locate='mdfind'
-fi
 
 ## awscli complete
 complete -C aws_completer aws
@@ -187,12 +190,12 @@ shopt -s histappend   # don't overwrite history file after each session
 # on every prompt, save new history to dedicated file and recreate full history
 # by reading all files, always keeping history from current session on top.
 update_history () {
-  history -a ${HISTFILE}.$$
+  history -a "${HISTFILE}".$$
   history -c
   history -r  # load common history file
   # load histories of other sessions
-  for f in `/bin/ls ${HISTFILE}.[0-9]* 2>/dev/null | grep -v "${HISTFILE}.$$\$"`; do
-    history -r $f
+  for f in $(/bin/ls "${HISTFILE}".[0-9]* 2>/dev/null | grep -v "${HISTFILE}.$$\$"); do
+    history -r "$f"
   done
   history -r "${HISTFILE}.$$"  # load current session history
 }
@@ -203,7 +206,7 @@ fi
 # merge session history into main history file on bash exit
 merge_session_history () {
   if [ -e ${HISTFILE}.$$ ]; then
-    cat ${HISTFILE}.$$ >> $HISTFILE
+    cat ${HISTFILE}.$$ >> "$HISTFILE"
     \rm ${HISTFILE}.$$
   fi
 }
@@ -211,16 +214,18 @@ trap merge_session_history EXIT
 
 
 # detect leftover files from crashed sessions and merge them back
-active_shells=$(pgrep -- `ps -p $$ -o comm=`)
-grep_pattern=`for pid in $active_shells; do echo -n "-e \.${pid}\$ "; done`
-orphaned_files=`/bin/ls $HISTFILE.[0-9]* 2>/dev/null | grep -v $grep_pattern`
+active_shells=$(pgrep -- "$(ps -p $$ -o comm=)")
+if [ -n "$active_shells" ]; then
+	grep_pattern=$(for pid in $active_shells; do echo -n "-e \.${pid}\$ "; done)
+	orphaned_files=$(/bin/ls "$HISTFILE".[0-9]* 2>/dev/null | grep -v "$grep_pattern")
+fi
 
 if [ -n "$orphaned_files" ]; then
   echo Merging orphaned history files:
   for f in $orphaned_files; do
-    echo "  `basename $f`"
-    cat $f >> $HISTFILE
-    \rm $f
+    echo "  $(basename "$f")"
+    cat "$f" >> "$HISTFILE"
+    \rm "$f"
   done
   echo "done."
 fi
@@ -254,7 +259,7 @@ agent_load_env
 # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
 agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 
-if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+if [ ! "$SSH_AUTH_SOCK" ] || [ "$agent_run_state" = 2 ]; then
     agent_start
 fi
 
@@ -267,6 +272,12 @@ unset env
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# OSX
+if [[ $(uname) == "Darwin" ]]; then
+    alias find='ffind'
+    alias locate='mdfind'
+fi
 
 # Run local config
 if [ -f ~/.bashrc.local ]; then
