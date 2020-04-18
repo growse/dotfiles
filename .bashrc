@@ -92,9 +92,6 @@ if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
 else
     PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
 fi
-#PROMPT_COMMAND='_set_exit_color;_set_git_prompt_string;_set_virtualenv_prompt_string;PS1="${EXITCOLOR}[${PS1_HOSTNAME}$(_dir_chomp "$(pwd)" $MAX_WD_LENGTH)${C_YELLOW}${PS1_VIRTUALENV}${PS1_GIT}${EXITCOLOR}]\$${C_DEFAULT} "'
-
-
 
 # Environment variables for interactive shells
 export CLICOLOR=1
@@ -182,8 +179,8 @@ complete -C aws_completer aws
 
 
 # keep unlimited shell history because it's very useful
-export HISTFILESIZE=-1
-export HISTSIZE=-1
+export HISTFILESIZE=
+export HISTSIZE=
 shopt -s histappend   # don't overwrite history file after each session
 
 
@@ -214,7 +211,7 @@ trap merge_session_history EXIT
 
 
 # detect leftover files from crashed sessions and merge them back
-active_shells=$(pgrep `ps -p $$ -o comm=`)
+active_shells=$(pgrep -- `ps -p $$ -o comm=`)
 grep_pattern=`for pid in $active_shells; do echo -n "-e \.${pid}\$ "; done`
 orphaned_files=`/bin/ls $HISTFILE.[0-9]* 2>/dev/null | grep -v $grep_pattern`
 
@@ -229,8 +226,14 @@ if [ -n "$orphaned_files" ]; then
 fi
 
 # Powerline
+function _powerline_go() {
+    PS1="$(/usr/local/bin/powerline-go -error $?)"
+}
+
 if [[ $(uname -m) != *"arm"* ]] ; then
-    if [[ -f /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]]; then
+    if [[ -f /usr/local/bin/powerline-go && "$PROMPT_COMMAND" != *_powerline_go* ]]; then
+        PROMPT_COMMAND="_powerline_go; $PROMPT_COMMAND"
+    elif [[ -f /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]]; then
         . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
     elif [[ -f /usr/share/powerline/bindings/bash/powerline.sh ]] ; then
         . /usr/share/powerline/bindings/bash/powerline.sh
@@ -258,7 +261,7 @@ fi
 unset env
 
 ## BRoot
-[[ -f ~/.config/broot/launcher/bash/rc ]] &&  source /home/growse/.config/broot/launcher/bash/br
+[[ -f ~/.config/broot/launcher/bash/rc ]] &&  source ~/.config/broot/launcher/bash/br
 
 ## NVM
 export NVM_DIR="$HOME/.nvm"
@@ -270,5 +273,3 @@ if [ -f ~/.bashrc.local ]; then
 	. ~/.bashrc.local
 fi
 
-
-source /home/growse/.config/broot/launcher/bash/br
