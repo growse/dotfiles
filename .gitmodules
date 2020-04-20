@@ -2,3 +2,6 @@
 	path = .dir_colors
 	url = https://github.com/seebi/dircolors-solarized.git
 	branch = master
+[submodule ".vim/pack/growse/start/deus"]
+	path = .vim/pack/growse/start/deus
+	url = https://github.com/ajmwagar/vim-deus.git
