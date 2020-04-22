@@ -232,7 +232,7 @@ fi
 
 # Powerline
 function _powerline_go() {
-    PS1="$(/usr/local/bin/powerline-go -error $? -shell bash)"
+    PS1="$($(which powerline-go) -error $? -shell bash)"
 }
 
 if [[ $(uname -m) != *"arm"* ]] ; then
