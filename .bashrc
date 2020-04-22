@@ -232,16 +232,13 @@ fi
 
 # Powerline
 function _powerline_go() {
-    PS1="$(/usr/local/bin/powerline-go -error $? -shell bash -modules-right git)"
+    PS1="$(/usr/local/bin/powerline-go -error $? -shell bash)"
 }
 
 if [[ $(uname -m) != *"arm"* ]] ; then
-    if [[ -f /usr/local/bin/powerline-go && "$PROMPT_COMMAND" != *_powerline_go* ]]; then
+    _command_exists powerline-go
+    if [[ ($? == 0) && "$PROMPT_COMMAND" != *_powerline_go* ]]; then
         PROMPT_COMMAND="_powerline_go; $PROMPT_COMMAND"
-    elif [[ -f /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]]; then
-        . /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
-    elif [[ -f /usr/share/powerline/bindings/bash/powerline.sh ]] ; then
-        . /usr/share/powerline/bindings/bash/powerline.sh
     fi
 fi
 
