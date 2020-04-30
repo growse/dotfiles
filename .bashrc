@@ -48,6 +48,8 @@ _set_virtualenv_prompt_string() {
 # Paths and environment variables for non-interactive shells
 PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
+_path_add ~/bin
+_path_add ~/.krew/bin
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
@@ -163,8 +165,10 @@ if _command_exists dircolors; then
     eval "$(dircolors --bourne-shell ~/.dir_colors)"
 fi
 
-## RVM
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+## rbenv
+if _command_exists rbenv; then
+    eval "$(rbenv init -)"
+fi
 
 ## awscli complete
 complete -C aws_completer aws
@@ -231,16 +235,16 @@ if [ -n "$orphaned_files" ]; then
 fi
 
 # Powerline
-function _powerline_go() {
-    PS1="$($(which powerline-go) -error $? -shell bash)"
+function _powerline_rust() {
+    PS1="$($(which powerline-rust) -error $? -shell bash)"
 }
 
-if [[ $(uname -m) != *"arm"* ]] ; then
-    _command_exists powerline-go
-    if [[ ($? == 0) && "$PROMPT_COMMAND" != *_powerline_go* ]]; then
-        PROMPT_COMMAND="_powerline_go; $PROMPT_COMMAND"
+#if [[ $(uname -m) != *"arm"* ]] ; then
+    _command_exists powerline-rust
+    if [[ ($? == 0) && "$PROMPT_COMMAND" != *_powerline-rust* ]]; then
+        PROMPT_COMMAND="_powerline_rust; $PROMPT_COMMAND"
     fi
-fi
+#fi
 
 ## SSH Agent
 env=~/.ssh/agent.env
