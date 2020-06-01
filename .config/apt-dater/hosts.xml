@@ -46,7 +46,6 @@
 
   <group name="pi">
     <host name="timebot" />
-    <host name="adsbbot" />
     <host name="pbxbot" />
     <host name="tellybot" />
   </group>
@@ -63,6 +62,7 @@
     <host name="serverbot" />
     <host name="thatserverbot" />
     <host name="macbot" />
+    <host name="laptoptybot" />
   </group>
 
   <group name="misc">
