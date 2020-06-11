@@ -236,7 +236,11 @@ fi
 
 # Powerline
 function _powerline_rust() {
-    PS1="$($(which powerline-rust) -error $? -shell bash)"
+	if /bin/findmnt -oFSTYPE -T $PWD|grep -q 9p; then
+	    PS1="$($(which powerline-rust) -git -error $? -shell bash)"
+    else
+	    PS1="$($(which powerline-rust) -error $? -shell bash)"
+    fi
 }
 
 #if [[ $(uname -m) != *"arm"* ]] ; then
