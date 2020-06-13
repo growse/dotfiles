@@ -236,19 +236,18 @@ fi
 
 # Powerline
 function _powerline_rust() {
-	if /bin/findmnt -oFSTYPE -T $PWD|grep -q 9p; then
+
+	if _command_exists findmnt && /bin/findmnt -oFSTYPE -T $PWD|grep -q 9p; then
 	    PS1="$($(which powerline-rust) -git -error $? -shell bash)"
     else
 	    PS1="$($(which powerline-rust) -error $? -shell bash)"
     fi
 }
 
-#if [[ $(uname -m) != *"arm"* ]] ; then
-    _command_exists powerline-rust
-    if [[ ($? == 0) && "$PROMPT_COMMAND" != *_powerline-rust* ]]; then
-        PROMPT_COMMAND="_powerline_rust; $PROMPT_COMMAND"
-    fi
-#fi
+_command_exists powerline-rust
+if [[ ($? == 0) && "$PROMPT_COMMAND" != *_powerline-rust* ]]; then
+    PROMPT_COMMAND="_powerline_rust; $PROMPT_COMMAND"
+fi
 
 ## SSH Agent
 env=~/.ssh/agent.env
