@@ -24,6 +24,7 @@
 	rebase = true
 [core]
 	editor = vim
+	eol = lf
 
 [includeIf "gitdir:~/Projects/work/"]
     path = ~/.gitconfig_work
