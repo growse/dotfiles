@@ -57,6 +57,7 @@
       <host name="sensorbot05" />
       <host name="sensorbot06" />
       <host name="sensorbot07" />
+      <host name="sensorbot08" />
   </group>
   <group name="k8s">
     <host name="serverbot" />
