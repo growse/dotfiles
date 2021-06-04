@@ -48,6 +48,7 @@
     <host name="timebot" />
     <host name="pbxbot" />
     <host name="tellybot" />
+    <host name="cammonitorbot" />
   </group>
   <group name="sensors">
       <host name="sensorbot01" />
