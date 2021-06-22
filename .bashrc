@@ -50,6 +50,7 @@ PATH="/usr/local/sbin:/usr/local/bin:$PATH" # These REALLY need to come first
 _path_add ~/Applications/bin
 _path_add ~/bin
 _path_add ~/.krew/bin
+_path_add ~/.rbenv/bin
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
@@ -288,3 +289,6 @@ if [ -f ~/.bashrc.local ]; then
 	. ~/.bashrc.local
 fi
 
+source "$HOME/.cargo/env"
+
+source /home/growse/.config/broot/launcher/bash/br
