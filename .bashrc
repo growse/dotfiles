@@ -105,15 +105,12 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 # Aliases and commands
 alias ls='ls -lah'
 alias ll='ls -laht'
-alias v='ls -ahlO'
-alias cls='clear'
-alias whatismyip="curl 'http://api.ipify.org?format=json'"
-alias json='python -mjson.tool'
 alias pip_upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 alias dmesg='dmesg -T'
 alias tail='tail -f -n500'
-if _command_exists ffind; then
-	alias find='ffind'
+
+if _command_exists stern; then
+	source <(stern --completion=bash)
 fi
 
 uname=$(uname)
