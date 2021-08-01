@@ -294,5 +294,3 @@ fi
 if [ -f ~/.config/broot/launcher/bash/br ]; then
 	source /home/growse/.config/broot/launcher/bash/br
 fi
-
-source /home/growse/.config/broot/launcher/bash/br
