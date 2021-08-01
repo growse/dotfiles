@@ -287,6 +287,12 @@ if [ -f ~/.bashrc.local ]; then
 	. ~/.bashrc.local
 fi
 
-source "$HOME/.cargo/env"
+if [ -f ~/.cargo/env ]; then
+	source "$HOME/.cargo/env"
+fi
+
+if [ -f ~/.config/broot/launcher/bash/br ]; then
+	source /home/growse/.config/broot/launcher/bash/br
+fi
 
 source /home/growse/.config/broot/launcher/bash/br
