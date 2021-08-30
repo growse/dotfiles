@@ -9,6 +9,7 @@ DefaultProfile=MEIN.profile
 Favorites=
 
 [KonsoleWindow]
+RemoveWindowTitleBarAndFrame=true
 SaveGeometryOnExit=false
 ShowMenuBarByDefault=false
 ShowWindowTitleOnTitleBar=true
@@ -21,3 +22,6 @@ ToolBarsMovable=Disabled
 
 [Notification Messages]
 CloseAllTabs=true
+
+[TabBar]
+TabBarVisibility=AlwaysHideTabBar
