@@ -46,7 +46,6 @@
 
   <group name="pi">
     <host name="timebot" />
-    <host name="pbxbot" />
     <host name="tellybot" />
     <host name="cammonitorbot" />
   </group>
