@@ -236,7 +236,7 @@ fi
 # Powerline
 function _powerline_rust() {
 
-	if _command_exists findmnt && /bin/findmnt -oFSTYPE -T $PWD|grep -q 9p; then
+	if _command_exists findmnt && /bin/findmnt -oFSTYPE -T .|grep -q 9p; then
 	    PS1="$($(which powerline-rust) -git -error $? -shell bash)"
     else
 	    PS1="$($(which powerline-rust) -error $? -shell bash)"
