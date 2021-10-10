@@ -52,6 +52,7 @@ _path_add ~/bin
 _path_add ~/.krew/bin
 _path_add ~/.rbenv/bin
 _path_add ~/.fly/bin
+_path_add ~/.cargo/bin
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
