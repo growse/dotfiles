@@ -69,6 +69,5 @@
 
   <group name="misc">
     <host name="talktoobot" />
-    <host name="beefybot" />
   </group>
 </hosts>
