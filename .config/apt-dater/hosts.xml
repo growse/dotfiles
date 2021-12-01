@@ -48,9 +48,9 @@
     <host name="timebot" />
     <host name="tellybot" />
     <host name="cammonitorbot" />
+    <host name="bridgebot" />
   </group>
   <group name="sensors">
-      <host name="sensorbot01" />
       <host name="sensorbot02" />
       <host name="sensorbot03" />
       <host name="sensorbot04" />
