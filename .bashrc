@@ -295,3 +295,7 @@ fi
 if [ -f ~/.config/broot/launcher/bash/br ]; then
 	source /home/growse/.config/broot/launcher/bash/br
 fi
+
+if [ -d ~/sdks/Android ]; then
+	export ANDROID_HOME=~/sdks/Android/
+fi
