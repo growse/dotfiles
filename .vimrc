@@ -1,8 +1,10 @@
 call plug#begin()
 Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/syntastic'
+Plug 'udalov/kotlin-vim'
 call plug#end()
 
 filetype plugin indent on
