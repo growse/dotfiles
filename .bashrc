@@ -299,3 +299,6 @@ fi
 if [ -d ~/sdks/Android ]; then
 	export ANDROID_HOME=~/sdks/Android/
 fi
+
+
+bind 'set enable-bracketed-paste on'
