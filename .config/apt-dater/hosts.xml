@@ -63,7 +63,6 @@
     <host name="serverbot" />
     <host name="thatserverbot" />
     <host name="macbot" />
-    <host name="dodgybot" />
     <host name="laptoptybot" />
   </group>
 
