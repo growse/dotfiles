@@ -6,6 +6,8 @@
 	<xi:fallback />
     </xi:include>
 
+    <ssh opt-cmd-flags="-o ConnectTimeout=60" />
+
     <!--
 	SSH(1) options
 
