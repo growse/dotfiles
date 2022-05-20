@@ -25,6 +25,7 @@
 [core]
 	editor = vim
 	eol = lf
+	excludesfile = /home/growse/.gitignore
 
 [includeIf "gitdir:~/Projects/work/"]
     path = ~/.gitconfig_work
