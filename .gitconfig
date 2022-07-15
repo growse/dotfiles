@@ -30,8 +30,6 @@
 [includeIf "gitdir:~/Projects/work/"]
     path = ~/.gitconfig_work
 
-[includeIf "gitdir:~/winhome/Projects/work/"]
-    path = ~/.gitconfig_work
 
 [init]
 	defaultBranch = main
