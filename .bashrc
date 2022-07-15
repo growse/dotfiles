@@ -3,8 +3,10 @@
 _path_add() {
     # Adds a directory to $PATH, but only if it isn't already present.
     # http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there/39995#39995
-    if [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="$PATH:$1"
+    if [ -d $1 ] ; then
+        if [[ ":$PATH:" != *":$1:"* ]]; then
+            PATH="$PATH:$1"
+        fi
     fi
 }
 _dir_chomp () {
@@ -53,6 +55,7 @@ _path_add ~/.krew/bin
 _path_add ~/.rbenv/bin
 _path_add ~/.fly/bin
 _path_add ~/.cargo/bin
+_path_add ~/.rd/bin
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
