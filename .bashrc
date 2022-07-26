@@ -117,6 +117,10 @@ if _command_exists stern; then
 	source <(stern --completion=bash)
 fi
 
+if _command_exists helm; then
+	source <(helm completion bash)
+fi
+
 uname=$(uname)
 if [[ $uname == 'Linux' ]]; then
 	alias ls='ls -lah --color'
@@ -241,8 +245,7 @@ fi
 
 # Powerline
 function _powerline_rust() {
-
-	if _command_exists findmnt && /bin/findmnt -oFSTYPE -T .|grep -q 9p; then
+    if _command_exists findmnt && /bin/findmnt -oFSTYPE -T .|grep -q 9p; then
 	    PS1="$($(which powerline-rust) -git -error $? -shell bash)"
     else
 	    PS1="$($(which powerline-rust) -error $? -shell bash)"
@@ -303,6 +306,10 @@ fi
 
 if [ -d ~/sdks/Android ]; then
 	export ANDROID_HOME=~/sdks/Android/
+fi
+
+if [ -f ~/.sdkman/bin/sdkman-init.sh ]; then
+	source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
 
