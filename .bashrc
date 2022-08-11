@@ -113,13 +113,11 @@ alias s='systemctl'
 alias j='journalctl'
 alias n='networkctl'
 
-if _command_exists stern; then
-	source <(stern --completion=bash)
-fi
-
-if _command_exists helm; then
-	source <(helm completion bash)
-fi
+if _command_exists stern; then source <(stern --completion=bash); fi
+if _command_exists helm; then source <(helm completion bash); fi
+if _command_exists gh; then source <(gh completion -s bash); fi
+if _command_exists flux; then source <(flux completion bash); fi
+if _command_exists kubectl; then source <(kubectl completion bash); fi
 
 uname=$(uname)
 if [[ $uname == 'Linux' ]]; then
@@ -292,25 +290,17 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 # Run local config
-if [ -f ~/.bashrc.local ]; then
-	. ~/.bashrc.local
-fi
+[[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
 
-if [ -f ~/.cargo/env ]; then
-	source "$HOME/.cargo/env"
-fi
+[[ -f ~/.cargo/env ]] && source "$HOME/.cargo/env"
 
-if [ -f ~/.config/broot/launcher/bash/br ]; then
-	source /home/growse/.config/broot/launcher/bash/br
-fi
+[[ -f ~/.config/broot/launcher/bash/br ]] && source /home/growse/.config/broot/launcher/bash/br
 
-if [ -d ~/sdks/Android ]; then
-	export ANDROID_HOME=~/sdks/Android/
-fi
+[[ -d ~/sdks/Android ]] && export ANDROID_HOME=~/sdks/Android/
 
-if [ -f ~/.sdkman/bin/sdkman-init.sh ]; then
-	source "$HOME/.sdkman/bin/sdkman-init.sh"
-fi
+[[ -f ~/.sdkman/bin/sdkman-init.sh ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+[[ -f ~/.poetry/env ]] && source ~/.poetry/env
 
 
 bind 'set enable-bracketed-paste on'
