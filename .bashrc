@@ -296,7 +296,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # OSX
 if [[ $(uname) == "Darwin" ]]; then
-    alias find='gfind'
+    if _command_exists gfind; then alias find='gfind'; fi
     alias locate='mdfind'
 fi
 
