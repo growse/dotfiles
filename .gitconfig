@@ -1,7 +1,7 @@
 [user]
 	email = github@growse.com
 	name = Andrew Rowson
-	signingKey = 505032AA37B241D1
+	signingkey = /home/growse/.ssh/id_ed25519.pub
 [http "https://gopkg.in"]
 	followRedirects = true
 [merge]
@@ -12,14 +12,14 @@
 	stashall = stash save --include-untracked
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [commit]
-	gpgSign = false
+	gpgsign = true
 [push]
 	default = simple
 	followTags = true
 [status]
 	showUntrackedFiles = all
 [gpg]
-	program = gpg2
+	format = ssh
 [pull]
 	rebase = true
 [core]
@@ -46,3 +46,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[tag]
+	gpgsign = true
