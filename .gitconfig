@@ -16,6 +16,7 @@
 [push]
 	default = simple
 	followTags = true
+	autoSetupRemote = true
 [status]
 	showUntrackedFiles = all
 [gpg]
