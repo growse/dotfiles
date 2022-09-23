@@ -2,5 +2,3 @@
     name = Andrew Rowson
     email = andrew.rowson@lseg.com
     
-[core]
-    sshCommand = ssh -i ~/.ssh/id_ed25519.work
