@@ -1,7 +1,7 @@
 [user]
 	email = github@growse.com
 	name = Andrew Rowson
-	signingkey = /home/growse/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 [http "https://gopkg.in"]
 	followRedirects = true
 [merge]
