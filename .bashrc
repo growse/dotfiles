@@ -53,6 +53,7 @@ _path_add ~/.fly/bin
 _path_add ~/.rd/bin
 _path_add /opt/homebrew/bin
 _path_add ~/Library/Android/sdk/platform-tools
+_path_add ~/Android/Sdk/platform-tools
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
