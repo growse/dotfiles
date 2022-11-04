@@ -45,8 +45,7 @@ _set_virtualenv_prompt_string() {
 }
 
 # Paths and environment variables for non-interactive shells
-_path_add ~/Applications/bin
-_path_add ~/bin
+_path_add ~/.local/bin
 _path_add ~/.krew/bin
 _path_add ~/.rbenv/bin
 _path_add ~/.fly/bin
