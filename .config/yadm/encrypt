@@ -1,3 +1,4 @@
 .kube/config
 .config/mosquitto_sub
 .config/mosquitto_pub
+.gradle/gradle.properties
