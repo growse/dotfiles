@@ -48,6 +48,7 @@
     <host name="timebot" />
     <host name="cammonitorbot" />
     <host name="bridgebot" />
+    <host name="adsbbot" />
   </group>
   <group name="sensors">
       <host name="cellar-sensorbot" />
