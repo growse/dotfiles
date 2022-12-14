@@ -54,7 +54,6 @@
       <host name="cellar-sensorbot" />
       <host name="guestroom-sensorbot" />
       <host name="engineroom-sensorbot" />
-      <host name="kitchen-sensorbot" />
       <host name="snug-sensorbot" />
   </group>
   <group name="k8s">
