@@ -60,8 +60,10 @@
   <group name="k8s">
     <host name="serverbot" />
     <host name="thatserverbot" />
-    <host name="macbot" />
     <host name="laptoptybot" />
+  </group>
+  <group name="eafnosupport">
+    <host name="eafnet-uk-01.nodes.eafnosupport.co.uk" />
   </group>
 
   <group name="misc">
