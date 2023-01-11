@@ -29,7 +29,7 @@ k9s:
         - all
         - default
       view:
-        active: pods
+        active: nodes
       featureGates:
         nodeShell: false
       shellPod:

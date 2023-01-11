@@ -61,6 +61,7 @@
     <host name="serverbot" />
     <host name="thatserverbot" />
     <host name="laptoptybot" />
+    <host name="dodgybot" />
   </group>
   <group name="eafnosupport">
     <host name="eafnet-uk-01.nodes.eafnosupport.co.uk" />
