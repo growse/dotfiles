@@ -111,6 +111,13 @@ alias s='systemctl'
 alias j='journalctl'
 alias n='networkctl'
 
+# AWS CLI shortcuts
+function aws_truncate_log_group() {
+	LOG_GROUP_NAME=$1
+	echo Truncating log group "$LOG_GROUP_NAME"
+	aws logs describe-log-streams --log-group-name "$LOG_GROUP_NAME" --query 'logStreams[*].logStreamName' -- | jq .[]|xargs -I {} sh -c "echo '{}' && aws logs delete-log-stream  --log-group-name $LOG_GROUP_NAME --log-stream-name '{}'"
+}
+
 ## Bash completion
 if _command_exists stern; then source <(stern --completion=bash); fi
 if _command_exists helm; then source <(helm completion bash); fi
