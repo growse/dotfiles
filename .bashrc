@@ -52,7 +52,9 @@ _path_add ~/.fly/bin
 _path_add ~/.rd/bin
 _path_add /opt/homebrew/bin
 _path_add ~/Library/Android/sdk/platform-tools
+_path_add ~/Android/Sdk/cmdline-tools/latest/bin
 _path_add ~/Android/Sdk/platform-tools
+_path_add ~/Android/Sdk/emulator
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
@@ -314,7 +316,7 @@ fi
 
 [[ -f ~/.config/broot/launcher/bash/br ]] && source /home/growse/.config/broot/launcher/bash/br
 
-[[ -d ~/sdks/Android ]] && export ANDROID_HOME=~/sdks/Android/
+[[ -d ~/Android/Sdk ]] && export ANDROID_HOME=~/Android/Sdk
 
 [[ -f ~/.sdkman/bin/sdkman-init.sh ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
