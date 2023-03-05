@@ -23,6 +23,7 @@ _path_add ~/Library/Android/sdk/platform-tools
 _path_add ~/Android/Sdk/cmdline-tools/latest/bin
 _path_add ~/Android/Sdk/platform-tools
 _path_add ~/Android/Sdk/emulator
+_path_add /usr/local/sbin
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
