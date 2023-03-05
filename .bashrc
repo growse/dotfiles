@@ -7,41 +7,9 @@ _path_add() {
         PATH="$1${PATH:+":$PATH"}"
     fi
 }
-_dir_chomp() {
-    # Shortens the working directory.
-    # First param is pwd, second param is the soft limit.
-    # From http://stackoverflow.com/questions/3497885/code-challenge-bash-prompt-path-shortener/3499237#3499237
-    # which asks for the shortest solution in characters, explaining the complete lack of readability or clarity.
-    local IFS=/ c=1 n d
-    local p=(${1/#$HOME/\~}) r=${p[*]}
-    local s=${#r}
-    while ((s > $2 && c < ${#p[*]} - 1)); do
-        d=${p[c]}
-        n=1
-        [[ $d = .* ]] && n=2
-        ((s -= ${#d} - n))
-        p[c++]=${d:0:n}
-    done
-    echo "${p[*]}"
-}
+
 _command_exists() {
     type "$1" &>/dev/null
-}
-_set_exit_color() {
-    if [[ $? != "0" ]]; then EXITCOLOR=$C_RED; else EXITCOLOR=$C_GREEN; fi
-}
-_set_git_prompt_string() {
-    if type -t __git_ps1 &>/dev/null; then
-        PS1_GIT="$(__git_ps1)"
-    fi
-}
-
-_set_virtualenv_prompt_string() {
-    if [[ ! -z "$VIRTUAL_ENV" ]]; then
-        PS1_VIRTUALENV=" [$(basename \"$VIRTUAL_ENV\")]"
-    else
-        PS1_VIRTUALENV=""
-    fi
 }
 
 # Paths and environment variables for non-interactive shells
