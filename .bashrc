@@ -60,14 +60,6 @@ C_BG_PURPLE="\[\033[45m\]"
 C_BG_CYAN="\[\033[46m\]"
 C_BG_LIGHTGRAY="\[\033[47m\]"
 
-# Prompt: Set variables
-MAX_WD_LENGTH="50"
-if [[ $TERM == screen* ]] && [ -n "$TMUX" ]; then
-    PS1_HOSTNAME=
-else
-    PS1_HOSTNAME="$(whoami)@$HOSTNAME:"
-fi
-
 # Environment variables for interactive shells
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
@@ -223,19 +215,6 @@ if [ -n "$orphaned_files" ]; then
     echo "done."
 fi
 
-# Powerline
-function _powerline_rust() {
-    if _command_exists findmnt && /bin/findmnt -oFSTYPE -T . | grep -q 9p; then
-        PS1="$($(which powerline-rust) -git -error $? -shell bash)"
-    else
-        PS1="$($(which powerline-rust) -error $? -shell bash)"
-    fi
-}
-
-_command_exists powerline-rust
-if [[ ($? == 0) && "$PROMPT_COMMAND" != *_powerline-rust* ]]; then
-    PROMPT_COMMAND="_powerline_rust; $PROMPT_COMMAND"
-fi
 
 ## SSH Agent
 env=~/.ssh/agent.env
@@ -292,3 +271,5 @@ fi
 [[ -f ~/.poetry/env ]] && source ~/.poetry/env
 
 bind 'set enable-bracketed-paste on'
+
+eval "$(starship init bash)"
