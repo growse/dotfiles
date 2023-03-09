@@ -11,7 +11,6 @@ _path_add() {
 _command_exists() {
     type "$1" &>/dev/null
 }
-echo "LOCAL"
 
 # Paths and environment variables for non-interactive shells
 _path_add ~/.local/bin
