@@ -12,6 +12,7 @@ $git_branch\
 [](fg:31 bg:148)\
 $git_status\
 [](fg:148 bg:89)\
+$python\
 $golang\
 $gradle\
 $java\
@@ -19,8 +20,7 @@ $nodejs\
 $rust\
 [](fg:89 bg:#06969A)\
 $docker_context\
-[](fg:#06969A bg:#33658A)\
-[ ](fg:#33658A)\
+[ ](fg:#06969A)\
 """
 
 # Disable the blank line at the start of the prompt
@@ -33,7 +33,7 @@ format = '[ $hostname ]($style)'
 disabled = false
 
 [status]
-disabled = false
+disabled = true
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
@@ -91,7 +91,7 @@ format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:89 fg:248"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
@@ -115,7 +115,7 @@ format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#86BBD8"
+style = "bg:89 fg:248"
 format = '[ $symbol ($version) ]($style)'
 
 [nim]
@@ -138,3 +138,8 @@ disabled = false
 time_format = "%T" # Hour:Minute Format
 style = "bg:238 fg:250"
 format = '[ $time ]($style)'
+
+[python]
+style = "bg:89 fg:248"
+format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
