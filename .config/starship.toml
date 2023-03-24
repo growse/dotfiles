@@ -95,12 +95,12 @@ style = "bg:89 fg:248"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
-style = "bg:#86BBD8"
+style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
@@ -110,7 +110,7 @@ format = '[ $symbol ($version) ]($style)'
 
 [julia]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
@@ -120,17 +120,17 @@ format = '[ $symbol ($version) ]($style)'
 
 [nim]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#86BBD8"
+style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
 [scala]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
