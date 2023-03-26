@@ -18,12 +18,12 @@ _path_add ~/.krew/bin
 _path_add ~/.rbenv/bin
 _path_add ~/.fly/bin
 _path_add ~/.rd/bin
-_path_add /opt/homebrew/bin
 _path_add ~/Library/Android/sdk/platform-tools
 _path_add ~/Android/Sdk/cmdline-tools/latest/bin
 _path_add ~/Android/Sdk/platform-tools
 _path_add ~/Android/Sdk/emulator
 _path_add /usr/local/sbin
+_path_add /usr/local/bin
 _path_add /usr/local/microsoft/powershell/7/
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
