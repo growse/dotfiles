@@ -28,6 +28,7 @@ _path_add /usr/local/microsoft/powershell/7/
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
+export LOKI_ADDR=https://loki.mill.growse.com
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]; then
