@@ -148,7 +148,7 @@ fi
 
 export CLICOLOR=YES
 if _command_exists dircolors; then
-    eval "$(dircolors --bourne-shell ~/.dir_colors)"
+    eval "$(dircolors --bourne-shell ~/.dir_colors/dircolors.ansi-universal)"
 fi
 
 ## rbenv
