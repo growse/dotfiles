@@ -59,8 +59,8 @@
   <group name="k8s">
     <host name="serverbot" />
     <host name="thatserverbot" />
-    <host name="laptoptybot" />
     <host name="dodgybot" />
+    <host name="thinknodebot" />
   </group>
   <group name="eafnosupport">
     <host name="eafnet-uk-01.nodes.eafnosupport.co.uk" />
