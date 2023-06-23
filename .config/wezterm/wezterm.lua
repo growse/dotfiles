@@ -15,6 +15,7 @@ return {
 		{ key = "v", mods = "LEADER",       action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
 		{ key = "o", mods = "LEADER",       action="TogglePaneZoomState" },
 		{ key = "z", mods = "LEADER",       action="TogglePaneZoomState" },
+		{ key = "p", mods = "LEADER",       action=wezterm.action.PaneSelect{mode="SwapWithActive"} },
 		{ key = "c", mods = "LEADER",       action=wezterm.action{SpawnTab="CurrentPaneDomain"}},
 		{ key = "LeftArrow", mods = "LEADER",       action=wezterm.action{ActivatePaneDirection="Left"}},
 		{ key = "DownArrow", mods = "LEADER",       action=wezterm.action{ActivatePaneDirection="Down"}},
