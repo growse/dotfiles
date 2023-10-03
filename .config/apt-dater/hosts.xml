@@ -47,7 +47,6 @@
   <group name="pi">
     <host name="timebot" />
     <host name="cammonitorbot" />
-    <host name="bridgebot" />
     <host name="adsbbot" />
   </group>
   <group name="sensors">
@@ -62,8 +61,9 @@
     <host name="dodgybot" />
     <host name="thinknodebot" />
   </group>
-  <group name="eafnosupport">
-    <host name="eafnet-uk-01.nodes.eafnosupport.co.uk" />
+  <group name="guffnet">
+    <host name="guffnet-uk-01.nodes.absolute-guff.net" />
+    <host name="guffnet-us-01.nodes.absolute-guff.net" />
   </group>
 
   <group name="misc">
