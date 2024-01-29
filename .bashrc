@@ -13,12 +13,18 @@ _command_exists() {
 }
 
 # Paths and environment variables for non-interactive shells
+export GOPATH=~/Projects/golang/
+export GPG_TTY=$(tty)
+export HELM_NAMESPACE="helmthings"
+export LOKI_ADDR=https://loki.mill.growse.com
+export JAVA_TOOL_OPTIONS="-Djava.net.preferIPv6Addresses=true -Djava.net.preferIPv4Stack=false"
 _path_add ~/.local/bin
 _path_add ~/.krew/bin
 _path_add ~/.rbenv/bin
 _path_add ~/.fly/bin
 _path_add ~/.rd/bin
 _path_add ~/bin
+_path_add ${GOPATH}/bin
 _path_add ~/Library/Android/sdk/platform-tools
 _path_add ~/Android/Sdk/cmdline-tools/latest/bin
 _path_add ~/Android/Sdk/platform-tools
@@ -27,10 +33,6 @@ _path_add /opt/homebrew/bin
 _path_add /usr/local/sbin
 _path_add /usr/local/bin
 _path_add /usr/local/microsoft/powershell/7/
-export GOPATH=~/Projects/golang/
-export GPG_TTY=$(tty)
-export HELM_NAMESPACE="helmthings"
-export LOKI_ADDR=https://loki.mill.growse.com
 
 # If this is a non-interactive shell, return
 if [[ $- != *i* ]]; then
