@@ -44,3 +44,5 @@
 	autoUpdate = true # 
 [diff]
 	algorithm = histogram
+[branch]
+	sort = -committerdate
