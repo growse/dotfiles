@@ -40,6 +40,7 @@
 	process = git-lfs filter-process
 	required = true
 [rerere]
-	enabled = true
+	enabled = true # Lets make merge confilct detection easier
+	autoUpdate = true # 
 [diff]
 	algorithm = histogram
