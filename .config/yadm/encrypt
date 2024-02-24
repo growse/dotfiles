@@ -3,3 +3,4 @@
 .config/mosquitto_pub
 .gradle/gradle.properties
 .gradle/init.d/remoteCache.gradle.kts
+.aws/credentials
