@@ -163,65 +163,6 @@ fi
 ## awscli complete
 complete -C aws_completer aws
 
-## History sanity https://gist.github.com/jan-warchol/89f5a748f7e8a2c9e91c9bc1b358d3ec
-# Synchronize history between bash sessions
-#
-# Make history from other terminals available to the current one. However,
-# don't mix all histories together - make sure that *all* commands from the
-# current session are on top of its history, so that pressing up arrow will
-# give you most recent command from this session, not from any session.
-#
-# Since history is saved on each prompt, this additionally protects it from
-# terminal crashes.
-
-# keep unlimited shell history because it's very useful
-export HISTFILESIZE=
-export HISTSIZE=
-shopt -s histappend # don't overwrite history file after each session
-
-# on every prompt, save new history to dedicated file and recreate full history
-# by reading all files, always keeping history from current session on top.
-update_history() {
-    history -a "${HISTFILE}".$$
-    history -c
-    history -r # load common history file
-    # load histories of other sessions
-    for f in $(/bin/ls "${HISTFILE}".[0-9]* 2>/dev/null | grep -v "${HISTFILE}.$$\$"); do
-        history -r "$f"
-    done
-    history -r "${HISTFILE}.$$" # load current session history
-}
-if [[ "$PROMPT_COMMAND" != *update_history* ]]; then
-    export PROMPT_COMMAND="update_history; $PROMPT_COMMAND"
-fi
-
-# merge session history into main history file on bash exit
-merge_session_history() {
-    if [ -e ${HISTFILE}.$$ ]; then
-        cat ${HISTFILE}.$$ >>"$HISTFILE"
-        \rm ${HISTFILE}.$$
-    fi
-}
-trap merge_session_history EXIT
-
-# detect leftover files from crashed sessions and merge them back
-active_shells=$(pgrep -- "$(ps -p $$ -o comm=)")
-if [ -n "$active_shells" ]; then
-    grep_pattern=$(for pid in $active_shells; do echo -n "-e \.${pid}\$ "; done)
-    orphaned_files=$(/bin/ls "$HISTFILE".[0-9]* 2>/dev/null | grep -v "$grep_pattern")
-fi
-
-if [ -n "$orphaned_files" ]; then
-    echo Merging orphaned history files:
-    for f in $orphaned_files; do
-        echo "  $(basename "$f")"
-        cat "$f" >>"$HISTFILE"
-        \rm "$f"
-    done
-    echo "done."
-fi
-
-
 ## SSH Agent
 env=~/.ssh/agent.env
 
@@ -279,3 +220,6 @@ fi
 bind 'set enable-bracketed-paste on'
 
 eval "$(starship init bash)"
+export ATUIN_NOBIND="true"
+eval "$(atuin init bash)"
+bind -x '"\C-r": __atuin_history'
