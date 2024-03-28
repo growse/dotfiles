@@ -38,7 +38,7 @@ dialect = "uk"
 
 ## which search mode to use
 ## possible values: prefix, fulltext, fuzzy, skim
-# search_mode = "fuzzy"
+search_mode = "prefix"
 
 ## which filter mode to use
 ## possible values: global, host, session, directory

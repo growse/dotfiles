@@ -12,6 +12,9 @@ _command_exists() {
     type "$1" &>/dev/null
 }
 
+source /usr/share/bash-preexec/bash-preexec.sh
+
+
 # Paths and environment variables for non-interactive shells
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
