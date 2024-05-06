@@ -12,7 +12,8 @@ _command_exists() {
     type "$1" &>/dev/null
 }
 
-source /usr/share/bash-preexec/bash-preexec.sh
+[ -f /usr/local/etc/profile.d/bash-preexec.sh ] && . /usr/local/etc/profile.d/bash-preexec.sh
+[ -f /usr/share/bash-preexec/bash-preexec.sh ] && . /usr/share/bash-preexec/bash-preexec.sh
 
 
 # Paths and environment variables for non-interactive shells
