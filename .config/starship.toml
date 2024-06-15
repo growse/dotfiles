@@ -9,18 +9,19 @@ $hostname\
 $directory\
 [](fg:31 bg:148)\
 $git_branch\
-[](fg:31 bg:148)\
+[](fg:148 bg:128)\
 $git_status\
-[](fg:148 bg:89)\
+$git_state\
+[](fg:128 bg:89)\
 $python\
 $golang\
 $gradle\
 $java\
 $nodejs\
 $rust\
-[](fg:89 bg:#06969A)\
-$docker_context\
-[ ](fg:#06969A)\
+[ ](fg:89 bg:214)\
+$status\
+[ ](fg:214)\
 """
 
 # Disable the blank line at the start of the prompt
@@ -33,7 +34,10 @@ format = '[ $hostname ]($style)'
 disabled = false
 
 [status]
-disabled = true
+disabled = false
+style = "bg:214 fg:18"
+success_symbol = "y"
+format = "[$int ]($style)"
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
@@ -70,9 +74,7 @@ truncation_symbol = "…/"
 disabled = true
 
 [docker_context]
-symbol = " "
-style = "bg:#06969A"
-format = '[ $symbol $context ]($style) $path'
+disabled = true
 
 [elixir]
 disabled = true
@@ -86,8 +88,12 @@ style = "bg:148 fg:0"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:148 fg:0"
-format = '[$all_status$ahead_behind ]($style)'
+style = "bg:128 fg:255"
+format = '[ $all_status$ahead_behind ]($style)'
+
+[git_state]
+style = "bg:128 fg:255"
+format = '[ $state( $progress_current/$progress_total) ]($style)'
 
 [golang]
 symbol = " "
@@ -98,18 +104,8 @@ format = '[ $symbol ($version) ]($style)'
 style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
-[haskell]
-symbol = " "
-style = "bg:89 fg:250"
-format = '[ $symbol ($version) ]($style)'
-
 [java]
 symbol = " "
-style = "bg:89 fg:250"
-format = '[ $symbol ($version) ]($style)'
-
-[julia]
-symbol = " "
 style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
@@ -118,20 +114,13 @@ symbol = ""
 style = "bg:89 fg:248"
 format = '[ $symbol ($version) ]($style)'
 
-[nim]
-symbol = " "
-style = "bg:89 fg:250"
-format = '[ $symbol ($version) ]($style)'
-
 [rust]
 symbol = ""
 style = "bg:89 fg:250"
 format = '[ $symbol ($version) ]($style)'
 
 [scala]
-symbol = " "
-style = "bg:89 fg:250"
-format = '[ $symbol ($version) ]($style)'
+enabled = false
 
 [time]
 disabled = false
@@ -142,4 +131,3 @@ format = '[ $time ]($style)'
 [python]
 style = "bg:89 fg:248"
 format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-
