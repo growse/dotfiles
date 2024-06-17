@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 
 return {
 	default_prog = {"/bin/bash"},
+	window_close_confirmation = "NeverPrompt",
 	font = wezterm.font "Cascadia Mono",
 	color_scheme = "Builtin Solarized Dark",
 	scrollback_lines = 3500,
