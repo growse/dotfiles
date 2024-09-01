@@ -5,3 +5,5 @@ Description=Atuin daemon
 Type=simple
 ExecStart=/usr/bin/atuin daemon
 
+[Install]
+WantedBy=default.target
