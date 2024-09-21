@@ -10,6 +10,9 @@
   "ui_font_size": 16,
   "autosave": "on_focus_change",
   "buffer_font_size": 16,
+  "hard_tabs": true,
+  "show_whitespace": "all",
+  "tab_size": 4,
   "theme": {
     "mode": "system",
     "light": "Atelier Dune Light",
