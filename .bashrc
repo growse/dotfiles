@@ -19,7 +19,6 @@ export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
 export LOKI_ADDR=https://loki.mill.growse.com
-export JAVA_TOOL_OPTIONS="-Djava.net.preferIPv6Addresses=true -Djava.net.preferIPv4Stack=false"
 _path_add ~/.local/bin
 _path_add ~/.krew/bin
 _path_add ~/.rbenv/bin
