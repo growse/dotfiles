@@ -55,11 +55,9 @@
     <host name="thinknodebot" />
   </group>
   <group name="guffnet">
-    <host name="guffnet-uk-01.nodes.absolute-guff.net" />
     <host name="guffnet-uk-02.nodes.absolute-guff.net" />
     <host name="guffnet-us-01.nodes.absolute-guff.net" />
     <host name="guffnet-ch-01.nodes.absolute-guff.net" />
-    <host name="guffnet-uk-bridge.nodes.absolute-guff.net" />
   </group>
 
   <group name="misc">
