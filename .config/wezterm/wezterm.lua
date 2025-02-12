@@ -5,7 +5,7 @@ return {
 	window_close_confirmation = "NeverPrompt",
 	font = wezterm.font "Cascadia Mono",
 	color_scheme = "Builtin Solarized Dark",
-	scrollback_lines = 3500,
+	scrollback_lines = 10000,
 	hide_tab_bar_if_only_one_tab = true,
 	warn_about_missing_glyphs = false,
 	leader = { key="a", mods="CTRL" },
