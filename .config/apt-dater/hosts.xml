@@ -53,11 +53,13 @@
     <host name="thatserverbot" />
     <host name="dodgybot" />
     <host name="thinknodebot" />
+    <host name="bobbot" />
   </group>
   <group name="guffnet">
     <host name="guffnet-uk-02.nodes.absolute-guff.net" />
     <host name="guffnet-us-01.nodes.absolute-guff.net" />
     <host name="guffnet-ch-01.nodes.absolute-guff.net" />
+    <host name="guffnet-de-01.nodes.absolute-guff.net" />
   </group>
 
   <group name="misc">
