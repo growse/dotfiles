@@ -1,6 +1,9 @@
 local wezterm = require 'wezterm'
 
-return {
+local act = wezterm.action
+
+local config = wezterm.config_builder()
+config = {
 	default_prog = {"/bin/bash"},
 	window_close_confirmation = "NeverPrompt",
 	font = wezterm.font "Cascadia Mono",
@@ -39,5 +42,19 @@ return {
 		{ key = "&", mods = "LEADER|SHIFT", action=wezterm.action{CloseCurrentTab={confirm=true}}},
 		{ key = "d", mods = "LEADER",       action=wezterm.action{CloseCurrentPane={confirm=true}}},
 		{ key = "x", mods = "LEADER",       action=wezterm.action{CloseCurrentPane={confirm=true}}},
+		{ key = 'r', mods = 'LEADER',       action = act.PromptInputLine {
+			description = 'Enter new name for tab',
+			action = wezterm.action_callback(function(window, pane, line)
+				-- line will be `nil` if they hit escape without entering anything
+				-- An empty string if they just hit enter
+				-- -- Or the actual line of text they wrote
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
+			},
+		},
 	},
 }
+
+return config
