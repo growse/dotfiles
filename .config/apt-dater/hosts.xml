@@ -64,5 +64,6 @@
 
   <group name="misc">
     <host name="talktoobot" />
+    <host name="storebot" />
   </group>
 </hosts>
