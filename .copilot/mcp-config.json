@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "beads": {
+      "tools": [
+        "*"
+      ],
+      "type": "local",
+      "command": "/home/growse/Projects/golang/bin/bd",
+      "args": []
+    },
+    "kubernetes": {
+      "type": "local",
+      "command": "npx",
+      "tools": [
+        "*"
+      ],
+      "args": [
+        "-y",
+        "kubernetes-mcp-server@latest",
+        "--read-only"
+      ]
+    }
+  }
+}
