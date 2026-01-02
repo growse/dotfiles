@@ -12,6 +12,10 @@
 	stashall = stash save --include-untracked
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	fpush = push --force-with-lease
+	plul = pull
+	pul = pull
+	pshu = push
+	comimt = commit
 [commit]
 	gpgsign = true
 [push]
