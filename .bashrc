@@ -80,7 +80,7 @@ alias tail='tail -f -n500'
 alias s='systemctl'
 alias j='journalctl'
 alias n='networkctl'
-alias dr="docker run --rm -it --entrypoint /bin/sh -v $(pwd):/local"
+alias dr="docker run --rm -it --entrypoint /bin/sh --net=host -v $(pwd):/local"
 
 # AWS CLI shortcuts
 function aws_truncate_log_group() {
