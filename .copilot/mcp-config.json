@@ -19,6 +19,27 @@
         "kubernetes-mcp-server@latest",
         "--read-only"
       ]
+    },
+    "paperless": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@baruchiro/paperless-mcp@latest"
+      ],
+      "env": {
+        "PAPERLESS_URL": "https://paperless.mill.growse.com",
+        "PAPERLESS_API_KEY": "7eac4a9041b4fe959049e2d1f65f2c934469dd99"
+      }
+    },
+    "Homeassistant": {
+      "tools": [
+        "*"
+      ],
+      "type": "sse",
+      "url": "https://homeassistant.mill.growse.com/mcp_server/sse",
+      "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjZTI0Mzk3MzFmZTM0ZjAyOGFiYWUzODIwMmRmMzZkZSIsImlhdCI6MTc2MjEwNDA1NywiZXhwIjoyMDc3NDY0MDU3fQ.kmkqTNJElvXY0gY3AjqbW3q6h6iwt89-pY2P1UoMIUU"
+      }
     }
   }
 }
