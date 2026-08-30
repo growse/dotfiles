@@ -1,0 +1,39 @@
+{
+  "extraKnownMarketplaces": {
+    "kubernetes-skill": {
+      "source": {
+        "source": "github",
+        "repo": "LukasNiessen/kubernetes-skill"
+      }
+    }
+  },
+  "theme": "dark",
+  "enabledPlugins": {
+    "kubernetes-skill@kubernetes-skill": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(kubectl get *)",
+      "Bash(kubectl describe *)",
+      "Bash(kubectl version *)",
+      "Bash(kubectl kustomize *)",
+      "Bash(npm info *)",
+      "Bash(npm view *)",
+      "Read(//tmp/**)",
+      "Bash(awk)",
+      "Bash(ls)",
+      "Bash(find)",
+      "Bash(tail)",
+      "Bash(head)",
+      "Bash(echo)",
+      "Bash(ping)",
+      "Bash(ls)",
+      "Bash(find)",
+      "Bash(sed)",
+      "Bash(grep)",
+      "Bash(echo)",
+      "Bash(cargo)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

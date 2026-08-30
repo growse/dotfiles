@@ -1,0 +1,42 @@
+[defaults]
+user = "growse"
+
+[[groups]]
+name = "time"
+[[groups.hosts]]
+hostname = "timebot"
+[[groups.hosts]]
+hostname = "encoderbot"
+
+[[groups]]
+name = "k8s"
+[[groups.hosts]]
+hostname = "serverbot"
+[[groups.hosts]]
+hostname = "thatserverbot"
+[[groups.hosts]]
+hostname = "thinknodebot"
+[[groups.hosts]]
+hostname = "ralphbot"
+[[groups.hosts]]
+hostname = "bobbot"
+
+[[groups]]
+name = "guffnet"
+
+[[groups.hosts]]
+hostname = "guffnet-us-01.nodes.absolute-guff.net"
+[[groups.hosts]]
+hostname = "guffnet-ch-01.nodes.absolute-guff.net"
+[[groups.hosts]]
+hostname = "guffnet-uk-02.nodes.absolute-guff.net"
+[[groups.hosts]]
+hostname = "de-01.nodes.absolute-guff.net"
+
+[[groups]]
+name = "infra"
+
+[[groups.hosts]]
+hostname = "storebot"
+[[groups.hosts]]
+hostname = "talktoobot"
