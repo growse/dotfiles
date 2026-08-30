@@ -1,15 +1,8 @@
 {
-  "extraKnownMarketplaces": {
-    "kubernetes-skill": {
-      "source": {
-        "source": "github",
-        "repo": "LukasNiessen/kubernetes-skill"
-      }
-    }
-  },
-  "theme": "dark",
-  "enabledPlugins": {
-    "kubernetes-skill@kubernetes-skill": true
+  "env": {
+    "UNIFI_NETWORK_HOST": "unifi.hq.growse.com",
+    "UNIFI_NETWORK_USERNAME": "growse",
+    "UNIFI_NETWORK_PASSWORD": "tributary-starved-onion-gnat"
   },
   "permissions": {
     "allow": [
@@ -33,7 +26,40 @@
       "Bash(grep)",
       "Bash(echo)",
       "Bash(cargo)",
+      "Bash(xargs)",
+      "Bash(stern)",
       "Read(//tmp/**)"
+    ],
+    "deny": [
+      "Bash(git push)"
     ]
-  }
+  },
+  "enabledPlugins": {
+    "kubernetes-skill@kubernetes-skill": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "monzo@tcoretech": true,
+    "unifi-network@unifi-plugins": true
+  },
+  "extraKnownMarketplaces": {
+    "kubernetes-skill": {
+      "source": {
+        "source": "github",
+        "repo": "LukasNiessen/kubernetes-skill"
+      }
+    },
+    "tcoretech": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/tcoretech/monzo-mcp.git"
+      }
+    },
+    "unifi-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "sirkirby/unifi-mcp"
+      }
+    }
+  },
+  "theme": "dark",
+  "agentPushNotifEnabled": true
 }
