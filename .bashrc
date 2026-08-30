@@ -18,11 +18,10 @@ _command_exists() {
 export GOPATH=~/Projects/golang/
 export GPG_TTY=$(tty)
 export HELM_NAMESPACE="helmthings"
-export LOKI_ADDR=https://loki.mill.growse.com
+export JAVA_TOOL_OPTIONS="-Djava.net.preferIPv6Addresses=system"
 _path_add ~/.local/bin
 _path_add ~/.krew/bin
 _path_add ~/.rbenv/bin
-_path_add ~/.fly/bin
 _path_add ~/.rd/bin
 _path_add ~/bin
 _path_add ${GOPATH}/bin
@@ -213,7 +212,7 @@ fi
 
 [[ -f ~/.config/broot/launcher/bash/br ]] && source /home/growse/.config/broot/launcher/bash/br
 
-[[ -d ~/Android/Sdk ]] && export ANDROID_HOME=~/Android/Sdk
+[[ -d ~/Android/Sdk ]] && export ANDROID_HOME=~/Android/Sdk && export ANDROID_SDK_ROOT=~/Android/Sdk
 
 [[ -f ~/.sdkman/bin/sdkman-init.sh ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
