@@ -1,9 +1,4 @@
 {
-  "env": {
-    "UNIFI_NETWORK_HOST": "unifi.hq.growse.com",
-    "UNIFI_NETWORK_USERNAME": "growse",
-    "UNIFI_NETWORK_PASSWORD": "tributary-starved-onion-gnat"
-  },
   "permissions": {
     "allow": [
       "Bash(kubectl get *)",
