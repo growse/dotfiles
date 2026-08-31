@@ -146,6 +146,7 @@ hand, not scripted).
 
 - `atuin login` then enable the user service: `systemctl --user enable --now atuin.service`
 - `rustup default stable`, `rbenv install <version>`, `sdk install java <version>` as needed
+- `cargo install syncerting-tray aptmatic`
 - Log into Syncthing (`http://localhost:8384`) and re-add sync folders (incl. `~/Pictures/wallpaper`)
 - Set default shell if changed: this machine uses **bash** (with starship
   prompt + atuin history), not the `cachyos-fish-config` package's fish shell
