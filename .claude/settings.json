@@ -32,7 +32,8 @@
     "kubernetes-skill@kubernetes-skill": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "monzo@tcoretech": true,
-    "unifi-network@unifi-plugins": true
+    "unifi-network@unifi-plugins": true,
+    "home-mcp@home": true
   },
   "extraKnownMarketplaces": {
     "kubernetes-skill": {
@@ -51,6 +52,12 @@
       "source": {
         "source": "github",
         "repo": "sirkirby/unifi-mcp"
+      }
+    },
+    "home": {
+      "source": {
+        "source": "directory",
+        "path": "/home/growse/.claude/local-marketplace"
       }
     }
   },

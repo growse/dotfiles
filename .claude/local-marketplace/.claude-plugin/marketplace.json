@@ -1,0 +1,16 @@
+{
+  "name": "home",
+  "owner": {
+    "name": "Andrew Rowson"
+  },
+  "metadata": {
+    "description": "Local plugins shared across machines via yadm"
+  },
+  "plugins": [
+    {
+      "name": "home-mcp",
+      "source": "./plugins/home-mcp",
+      "description": "MCP servers for the home lab, with secrets read from the OS keyring"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "grafana": {
+      "type": "stdio",
+      "command": "${CLAUDE_PLUGIN_ROOT}/helpers/grafana.sh",
+      "env": {
+        "GRAFANA_URL": "https://grafana.hq.growse.com"
+      }
+    },
+    "homeassistant": {
+      "type": "sse",
+      "url": "https://homeassistant.hq.growse.com/mcp_server/sse",
+      "headersHelper": "${CLAUDE_PLUGIN_ROOT}/helpers/homeassistant-headers.sh"
+    },
+    "victoriametrics": {
+      "type": "http",
+      "url": "https://metrics.hq.growse.com/mcp"
+    },
+    "paperless": {
+      "type": "stdio",
+      "command": "${CLAUDE_PLUGIN_ROOT}/helpers/paperless.sh",
+      "env": {
+        "PAPERLESS_URL": "https://paperless.hq.growse.com"
+      }
+    },
+    "tailscale": {
+      "type": "stdio",
+      "command": "${CLAUDE_PLUGIN_ROOT}/helpers/tailscale.sh",
+      "env": {
+        "TAILSCALE_TAILNET": "-"
+      }
+    }
+  }
+}

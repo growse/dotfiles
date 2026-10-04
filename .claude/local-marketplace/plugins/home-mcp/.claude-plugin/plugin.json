@@ -1,0 +1,5 @@
+{
+  "name": "home-mcp",
+  "version": "1.0.0",
+  "description": "MCP servers for the home lab, with secrets read from the OS keyring"
+}
