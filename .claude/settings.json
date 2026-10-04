@@ -32,7 +32,7 @@
     "kubernetes-skill@kubernetes-skill": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "monzo@tcoretech": true,
-    "unifi-network@unifi-plugins": true,
+    "unifi-network@unifi-plugins": false,
     "home-mcp@home": true
   },
   "extraKnownMarketplaces": {

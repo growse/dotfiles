@@ -29,6 +29,17 @@
       "env": {
         "TAILSCALE_TAILNET": "-"
       }
+    },
+    "unifi-network": {
+      "type": "stdio",
+      "command": "${CLAUDE_PLUGIN_ROOT}/helpers/unifi-network.sh",
+      "env": {
+        "UNIFI_NETWORK_HOST": "unifi.hq.growse.com",
+        "UNIFI_NETWORK_PORT": "443",
+        "UNIFI_NETWORK_SITE": "default",
+        "UNIFI_NETWORK_VERIFY_SSL": "true",
+        "UNIFI_TOOL_REGISTRATION_MODE": "lazy"
+      }
     }
   }
 }
