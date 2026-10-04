@@ -32,7 +32,6 @@
     "kubernetes-skill@kubernetes-skill": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "monzo@tcoretech": true,
-    "unifi-network@unifi-plugins": false,
     "home-mcp@home": true
   },
   "extraKnownMarketplaces": {
@@ -46,12 +45,6 @@
       "source": {
         "source": "git",
         "url": "https://github.com/tcoretech/monzo-mcp.git"
-      }
-    },
-    "unifi-plugins": {
-      "source": {
-        "source": "github",
-        "repo": "sirkirby/unifi-mcp"
       }
     },
     "home": {
