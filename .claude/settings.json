@@ -57,32 +57,36 @@
   "theme": "dark",
   "agentPushNotifEnabled": true,
   "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(kubectl delete:*) in namespace house",
+      "Bash(kubectl apply:*) against non-house namespaces without explicit confirmation"
+    ],
     "environment": [
       "### Org-wide",
       "**Organization**: None configured",
       "**Cloud provider(s)**: None configured",
-      "**Repository visibility**: assume private unless the remote host and repo name indicate otherwise, or a visibility check in the transcript shows public — could not be determined here (no git remotes configured in this repo)",
+      "**Repository visibility**: assume private unless the remote host and repo name indicate otherwise, or a visibility check in the transcript shows public — growse/k8s-manifests is confirmed private (via gh)",
       "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
       "**Secrets management**: None configured",
-      "**Default / protected branches**: unknown — origin/HEAD unset and no remotes configured in this repo",
+      "**Default / protected branches**: Default branch is `main` where known (growse/k8s-manifests); no protected branches listed — treat `main` as sensitive pending confirmation",
       "**CI/CD deploy targets**: None configured",
       "**Network posture**: None configured",
       "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine or CI runner with open internet",
-      "**Source control**: The trusted repo only — no remotes are configured for /home/growse/Projects, and no additional orgs are configured",
-      "**Trusted internal domains**: None configured",
+      "**Source control**: The trusted repos under /home/growse/Projects and their own remotes only (e.g. growse/k8s-manifests at github.com:growse/k8s-manifests); no additional orgs are configured",
+      "**Trusted internal domains**: frigate.hq.growse.com",
       "**Trusted cloud buckets**: None configured",
-      "**Key internal services**: None configured",
+      "**Key internal services**: frigate.hq.growse.com (frigate service)",
       "**Internal package registry**: None configured",
       "**Sensitive data locations & audiences**: any file or store holding personal data, confidential business data, credentials, regulated data, or similarly sensitive material; preserve exact handles when known and share only with audiences cleared at the [named+specifics] bar — note likely candidates in this tree include k8s-manifests/manifests/**/*secrets*.yaml, containers/ups-k8s-scaler/.env, home-config/.env, and k8s-manifests/manifests/adsb/secrets.env",
       "**Data retention / declassification**: None configured",
       "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment",
       "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
-      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment; also treat the `house` k8s namespace as an active workload scope",
       "### User-specific",
       "**Primary use of Claude Code**: software development, with heavy personal infrastructure/homelab operations (Kubernetes manifests, backups, networking, container builds) based on repo contents and shell history",
-      "**Trusted repo**: The git repository at /home/growse/Projects (its working directory) — no remotes are currently configured, so there is no remote to scope pushes to",
-      "**Org-specific CLiOs**: None configured",
-      "**Org-specific CLIs**: None configured — shell history shows general-purpose and homelab tooling (yay, yadm, k9s, stern, iscsiadm) but nothing identifiable as an org-specific internal CLI"
+      "**Trusted repo**: Git repositories under /home/growse/Projects, including /home/growse/Projects/k8s-manifests (remote github.com:growse/k8s-manifests, private)",
+      "**Org-specific CLIs**: None configured — shell history shows general-purpose and homelab tooling (yay, yadm, k9s, kubectl, stern, iscsiadm) but nothing identifiable as an org-specific internal CLI; kubectl and stern used routinely against the `house` namespace"
     ]
   }
 }
