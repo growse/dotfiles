@@ -25,13 +25,9 @@ hostname = "bobbot"
 name = "guffnet"
 
 [[groups.hosts]]
-hostname = "guffnet-us-01.nodes.absolute-guff.net"
+hostname = "us-01.nodes.absolute-guff.net"
 [[groups.hosts]]
 hostname = "guffnet-ch-01.nodes.absolute-guff.net"
-[[groups.hosts]]
-hostname = "guffnet-uk-02.nodes.absolute-guff.net"
-[[groups.hosts]]
-hostname = "de-01.nodes.absolute-guff.net"
 
 [[groups]]
 name = "infra"
