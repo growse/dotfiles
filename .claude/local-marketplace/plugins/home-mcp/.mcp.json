@@ -40,6 +40,13 @@
         "UNIFI_NETWORK_VERIFY_SSL": "true",
         "UNIFI_TOOL_REGISTRATION_MODE": "lazy"
       }
+    },
+    "tdarr": {
+      "type": "stdio",
+      "command": "${CLAUDE_PLUGIN_ROOT}/helpers/tdarr.sh",
+      "env": {
+        "TDARR_URL": "https://tdarr.hq.growse.com"
+      }
     }
   }
 }

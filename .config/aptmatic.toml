@@ -27,7 +27,7 @@ name = "guffnet"
 [[groups.hosts]]
 hostname = "us-01.nodes.absolute-guff.net"
 [[groups.hosts]]
-hostname = "guffnet-ch-01.nodes.absolute-guff.net"
+hostname = "ch-01.nodes.absolute-guff.net"
 
 [[groups]]
 name = "infra"
